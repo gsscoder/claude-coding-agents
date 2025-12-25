@@ -13,8 +13,9 @@ Custom agents are specialized AI assistants in Claude Code that focus on specifi
 ## Available Agents
 
 ### Code Navigation & Analysis
-- **code-explorer** - Intelligently locate and read files by path or role description, extract specific code sections with surgical precision
+- **code-explorer** - Intelligently locate and read files by path or role description using LSP for semantic navigation; extract specific code sections with surgical precision
 - **code-analyst** - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications
+- **forensics-analyst** - Reverse-engineer unfamiliar codebases and understand the structure, behavior, and intent of code you didn't write; analyze only provided files without autonomous exploration
 
 ### Development & Implementation
 - **feature-builder** - Translate technical discussions and specs into production-ready code that aligns with existing architecture
