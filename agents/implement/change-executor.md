@@ -1,6 +1,43 @@
 ---
 name: "change-executor"
-description: "Use this agent when a single, clearly scoped code modification needs to be applied — such as renaming a symbol, swapping a value, updating a config entry, adjusting a function signature, or making a small bounded addition or removal. The task must be expressible in one sentence with no open design decisions remaining.\\n\\n<example>\\nContext: The user wants to rename a constant across the codebase.\\nuser: \"Rename the constant MAX_RETRY_COUNT to MAX_RETRIES in the config module\"\\nassistant: \"I'll use the change-executor agent to apply this rename.\"\\n<commentary>\\nThis is a single, clearly scoped rename operation. Use the change-executor agent to apply the minimal change.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user wants to update a configuration value.\\nuser: \"Change the default timeout in src/config/settings.ts from 3000 to 5000\"\\nassistant: \"I'll launch the change-executor agent to update that value.\"\\n<commentary>\\nThis is an atomic value swap in a known file. The change-executor agent is the right tool.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user wants to add a parameter to a function.\\nuser: \"Add an optional `locale: string` parameter to the formatDate function in src/utils/date.ts\"\\nassistant: \"I'll use the change-executor agent to update the function signature.\"\\n<commentary>\\nThis is a bounded function signature change. Use the change-executor agent.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user asks for something too broad.\\nuser: \"Refactor the authentication module to be more maintainable\"\\nassistant: \"I'll use the change-executor agent to evaluate this request.\"\\n<commentary>\\nThe change-executor agent will correctly decline this request as too broad and ask for it to be broken into smaller, atomic operations.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when a single, clearly scoped code modification needs to be applied — such as renaming a symbol, swapping a value, updating a config entry, adjusting a function signature, or making a small bounded addition or removal. The task must be expressible in one sentence with no open design decisions remaining.
+
+  <example>
+  Context: The user wants to rename a constant across the codebase.
+  user: "Rename the constant MAX_RETRY_COUNT to MAX_RETRIES in the config module"
+  assistant: "I'll use the change-executor agent to apply this rename."
+  <commentary>
+  This is a single, clearly scoped rename operation. Use the change-executor agent to apply the minimal change.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user wants to update a configuration value.
+  user: "Change the default timeout in src/config/settings.ts from 3000 to 5000"
+  assistant: "I'll launch the change-executor agent to update that value."
+  <commentary>
+  This is an atomic value swap in a known file. The change-executor agent is the right tool.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user wants to add a parameter to a function.
+  user: "Add an optional `locale: string` parameter to the formatDate function in src/utils/date.ts"
+  assistant: "I'll use the change-executor agent to update the function signature."
+  <commentary>
+  This is a bounded function signature change. Use the change-executor agent.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user asks for something too broad.
+  user: "Refactor the authentication module to be more maintainable"
+  assistant: "I'll use the change-executor agent to evaluate this request."
+  <commentary>
+  The change-executor agent will correctly decline this request as too broad and ask for it to be broken into smaller, atomic operations.
+  </commentary>
+  </example>
 tools: Bash, Edit, Glob, Grep, LSP, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: yellow

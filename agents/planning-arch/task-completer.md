@@ -1,6 +1,43 @@
 ---
 name: "task-completer"
-description: "Use this agent when a task has failed or been rejected multiple times and blind retries are not working. This agent should be invoked after repeated failures to perform forensic analysis before attempting any fix.\\n\\n<example>\\nContext: A feature implementation has been attempted twice and rejected both times during code review for different reasons.\\nuser: \"I've tried implementing the OAuth flow three times now and it keeps getting rejected in PR review. First time for security issues, second time for not handling edge cases properly.\"\\nassistant: \"This sounds like a case for systematic failure recovery analysis. Let me use the task-completer agent to forensically analyze the previous failures and devise a validated approach before attempting again.\"\\n<commentary>\\nSince the feature has failed multiple times for different reasons, use the task-completer agent to analyze the root cause chain and execute a comprehensive fix with checkpoints.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Tests have been failing despite multiple fix attempts.\\nuser: \"These integration tests keep failing. I've tried three different fixes and nothing is working.\"\\nassistant: \"I'll use the task-completer agent to analyze the full failure chain before attempting another fix.\"\\n<commentary>\\nRepeated test failures despite fix attempts indicate a deeper root cause issue. Use the task-completer agent to perform forensic analysis and identify the true root cause before acting.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: A deployment has failed and obvious solutions have already been tried.\\nuser: \"The deployment to production keeps failing. We've tried the usual suspects — env vars, permissions, config files — nothing works.\"\\nassistant: \"Let me bring in the task-completer agent to systematically analyze every prior failure mode and construct a validated recovery plan.\"\\n<commentary>\\nWhen obvious fixes have been exhausted, the task-completer agent's forensic methodology is needed to uncover non-obvious root causes.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: A PR has been rejected multiple times for different reasons each time.\\nuser: \"This PR has been rejected four times now. Each review finds a different problem.\"\\nassistant: \"This pattern of shifting rejection reasons suggests systemic issues. I'll invoke the task-completer agent to map the full failure chain and address all failure modes simultaneously.\"\\n<commentary>\\nPR rejections for different reasons each time indicate the fixes are addressing symptoms rather than root causes. Use the task-completer agent to perform comprehensive analysis.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when a task has failed or been rejected multiple times and blind retries are not working. This agent should be invoked after repeated failures to perform forensic analysis before attempting any fix.
+
+  <example>
+  Context: A feature implementation has been attempted twice and rejected both times during code review for different reasons.
+  user: "I've tried implementing the OAuth flow three times now and it keeps getting rejected in PR review. First time for security issues, second time for not handling edge cases properly."
+  assistant: "This sounds like a case for systematic failure recovery analysis. Let me use the task-completer agent to forensically analyze the previous failures and devise a validated approach before attempting again."
+  <commentary>
+  Since the feature has failed multiple times for different reasons, use the task-completer agent to analyze the root cause chain and execute a comprehensive fix with checkpoints.
+  </commentary>
+  </example>
+
+  <example>
+  Context: Tests have been failing despite multiple fix attempts.
+  user: "These integration tests keep failing. I've tried three different fixes and nothing is working."
+  assistant: "I'll use the task-completer agent to analyze the full failure chain before attempting another fix."
+  <commentary>
+  Repeated test failures despite fix attempts indicate a deeper root cause issue. Use the task-completer agent to perform forensic analysis and identify the true root cause before acting.
+  </commentary>
+  </example>
+
+  <example>
+  Context: A deployment has failed and obvious solutions have already been tried.
+  user: "The deployment to production keeps failing. We've tried the usual suspects — env vars, permissions, config files — nothing works."
+  assistant: "Let me bring in the task-completer agent to systematically analyze every prior failure mode and construct a validated recovery plan."
+  <commentary>
+  When obvious fixes have been exhausted, the task-completer agent's forensic methodology is needed to uncover non-obvious root causes.
+  </commentary>
+  </example>
+
+  <example>
+  Context: A PR has been rejected multiple times for different reasons each time.
+  user: "This PR has been rejected four times now. Each review finds a different problem."
+  assistant: "This pattern of shifting rejection reasons suggests systemic issues. I'll invoke the task-completer agent to map the full failure chain and address all failure modes simultaneously."
+  <commentary>
+  PR rejections for different reasons each time indicate the fixes are addressing symptoms rather than root causes. Use the task-completer agent to perform comprehensive analysis.
+  </commentary>
+  </example>
 tools: Bash, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: red

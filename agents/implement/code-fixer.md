@@ -1,6 +1,34 @@
 ---
 name: "code-fixer"
-description: "Use this agent when a user needs targeted code corrections such as fixing compile errors, resolving type mismatches, patching logic bugs, applying specific refactors, or making precise modifications to one or more files. It should be invoked when there is a clear, scoped fix request rather than a broad architectural redesign.\\n\\n<example>\\nContext: The user encounters a compile error after writing new code.\\nuser: \"I'm getting a NullReferenceException on line 42 of UserService.cs, can you fix it?\"\\nassistant: \"I'll use the code-fixer agent to analyze and repair that error.\"\\n<commentary>\\nThe user has a specific compile/runtime error to fix. Launch the code-fixer agent to inspect the file, identify the root cause, and produce a minimal, safe correction.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user wants a targeted change applied to existing code.\\nuser: \"Rename the method CalculateTotal to ComputeTotal across all files and update all callers.\"\\nassistant: \"Let me invoke the code-fixer agent to apply that targeted rename across the codebase.\"\\n<commentary>\\nThis is a scoped, well-defined modification. The code-fixer agent should handle it without introducing unrelated changes.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user added a new dependency and existing code now fails to build.\\nuser: \"After adding the new NuGet package, the project no longer compiles. Here are the errors.\"\\nassistant: \"I'll launch the code-fixer agent to diagnose the build errors and apply the necessary fixes.\"\\n<commentary>\\nBuild breakage from a dependency change is a precise fix scenario. Use the code-fixer agent to resolve only the reported errors.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when a user needs targeted code corrections such as fixing compile errors, resolving type mismatches, patching logic bugs, applying specific refactors, or making precise modifications to one or more files. It should be invoked when there is a clear, scoped fix request rather than a broad architectural redesign.
+
+  <example>
+  Context: The user encounters a compile error after writing new code.
+  user: "I'm getting a NullReferenceException on line 42 of UserService.cs, can you fix it?"
+  assistant: "I'll use the code-fixer agent to analyze and repair that error."
+  <commentary>
+  The user has a specific compile/runtime error to fix. Launch the code-fixer agent to inspect the file, identify the root cause, and produce a minimal, safe correction.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user wants a targeted change applied to existing code.
+  user: "Rename the method CalculateTotal to ComputeTotal across all files and update all callers."
+  assistant: "Let me invoke the code-fixer agent to apply that targeted rename across the codebase."
+  <commentary>
+  This is a scoped, well-defined modification. The code-fixer agent should handle it without introducing unrelated changes.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user added a new dependency and existing code now fails to build.
+  user: "After adding the new NuGet package, the project no longer compiles. Here are the errors."
+  assistant: "I'll launch the code-fixer agent to diagnose the build errors and apply the necessary fixes."
+  <commentary>
+  Build breakage from a dependency change is a precise fix scenario. Use the code-fixer agent to resolve only the reported errors.
+  </commentary>
+  </example>
 tools: Bash, Edit, Glob, Grep, LSP, Read, Skill, TaskList, TaskUpdate, Write, TaskGet, TaskCreate
 model: inherit
 color: red

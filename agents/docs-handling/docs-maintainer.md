@@ -1,6 +1,43 @@
 ---
 name: "docs-maintainer"
-description: "Use this agent when code changes affect documented functionality, architecture, or workflows; when new features, modules, or components need documentation; when existing docs need accuracy review after refactoring; when API changes, configuration updates, or architectural shifts require documentation updates; or when documentation consistency checks are needed across the repository.\\n\\n<example>\\nContext: The user has just refactored a module's public API, renaming several functions and changing parameter signatures.\\nuser: \"I've refactored the auth module — renamed `authenticateUser` to `verifyCredentials`, changed the return type, and removed the `legacy` parameter.\"\\nassistant: \"I'll use the docs-maintainer agent to review and update the documentation to reflect these API changes.\"\\n<commentary>\\nSince the code changes directly affect documented API behavior, launch the docs-maintainer agent to identify stale references and update all affected documentation.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user has added a new configuration system to the project.\\nuser: \"I just added a new YAML-based config system under `src/config/`. It supports environment-specific overrides and schema validation.\"\\nassistant: \"Let me launch the docs-maintainer agent to document this new configuration system accurately.\"\\n<commentary>\\nA new feature with no existing documentation was introduced. The docs-maintainer agent should read the implementation and write accurate documentation based solely on what the code does.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user has completed a significant architectural refactor moving from a monolith to a service-oriented structure.\\nuser: \"We finished migrating from a monolithic architecture to independent services. The architecture docs are probably outdated now.\"\\nassistant: \"I'll invoke the docs-maintainer agent to audit the architecture documentation and bring it in sync with the new service-oriented structure.\"\\n<commentary>\\nArchitectural shifts require systematic documentation review. The docs-maintainer agent should scan both the codebase and existing docs to identify and resolve discrepancies.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user wants to ensure all documentation is consistent before a release.\\nuser: \"We're about to cut the v2.0 release. Can you make sure all our docs are consistent and accurate?\"\\nassistant: \"I'll use the docs-maintainer agent to perform a full documentation consistency check across the repository before the release.\"\\n<commentary>\\nPre-release documentation audits are a core use case for the docs-maintainer agent — it will cross-reference code and docs to surface any gaps or inaccuracies.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when code changes affect documented functionality, architecture, or workflows; when new features, modules, or components need documentation; when existing docs need accuracy review after refactoring; when API changes, configuration updates, or architectural shifts require documentation updates; or when documentation consistency checks are needed across the repository.
+
+  <example>
+  Context: The user has just refactored a module's public API, renaming several functions and changing parameter signatures.
+  user: "I've refactored the auth module — renamed `authenticateUser` to `verifyCredentials`, changed the return type, and removed the `legacy` parameter."
+  assistant: "I'll use the docs-maintainer agent to review and update the documentation to reflect these API changes."
+  <commentary>
+  Since the code changes directly affect documented API behavior, launch the docs-maintainer agent to identify stale references and update all affected documentation.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user has added a new configuration system to the project.
+  user: "I just added a new YAML-based config system under `src/config/`. It supports environment-specific overrides and schema validation."
+  assistant: "Let me launch the docs-maintainer agent to document this new configuration system accurately."
+  <commentary>
+  A new feature with no existing documentation was introduced. The docs-maintainer agent should read the implementation and write accurate documentation based solely on what the code does.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user has completed a significant architectural refactor moving from a monolith to a service-oriented structure.
+  user: "We finished migrating from a monolithic architecture to independent services. The architecture docs are probably outdated now."
+  assistant: "I'll invoke the docs-maintainer agent to audit the architecture documentation and bring it in sync with the new service-oriented structure."
+  <commentary>
+  Architectural shifts require systematic documentation review. The docs-maintainer agent should scan both the codebase and existing docs to identify and resolve discrepancies.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user wants to ensure all documentation is consistent before a release.
+  user: "We're about to cut the v2.0 release. Can you make sure all our docs are consistent and accurate?"
+  assistant: "I'll use the docs-maintainer agent to perform a full documentation consistency check across the repository before the release."
+  <commentary>
+  Pre-release documentation audits are a core use case for the docs-maintainer agent — it will cross-reference code and docs to surface any gaps or inaccuracies.
+  </commentary>
+  </example>
 tools: Bash, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write, Edit
 model: inherit
 color: green

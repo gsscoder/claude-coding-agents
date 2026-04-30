@@ -1,6 +1,43 @@
 ---
 name: "test-designer"
-description: "Use this agent when new functionality needs test coverage defined in a way that follows established conventions, when existing tests are broken or incomplete after a refactor and need redesign plus extension at the specification level, when specific error paths or edge cases need clearly defined coverage scenarios, or when integration or end-to-end test scenarios need to be designed. This agent strictly operates at the design and specification level — it does not generate, edit, or modify any code or test files.\\n\\n<example>\\nContext: The user has just implemented a new authentication middleware and wants to know what tests should be written.\\nuser: \"I just finished the new JWT authentication middleware. What tests should we write for it?\"\\nassistant: \"Let me use the test-designer agent to analyze your existing test patterns and produce a comprehensive test design for the new middleware.\"\\n<commentary>\\nSince new functionality has been introduced and the user wants test coverage defined, launch the test-designer agent to read existing tests and produce a detailed test specification.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: A refactor broke several existing tests and the team needs to understand what the test coverage should look like going forward.\\nuser: \"We refactored the payment service and a bunch of tests are now broken or outdated. Can you help figure out what the tests should cover?\"\\nassistant: \"I'll use the test-designer agent to review the current state of the tests and the refactored code, then produce a redesigned test specification.\"\\n<commentary>\\nSince existing tests are broken after a refactor and need redesign at the specification level, use the test-designer agent.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user wants to make sure all edge cases for a newly written data validation function are covered.\\nuser: \"I want to make sure we're covering all the edge cases for the new input validation logic.\"\\nassistant: \"Let me use the test-designer agent to identify all meaningful edge cases and define clear coverage scenarios for the validation logic.\"\\n<commentary>\\nSince specific edge cases need clearly defined coverage scenarios, use the test-designer agent to produce a thorough specification.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: A new feature spans multiple services and needs end-to-end test scenarios defined.\\nuser: \"We have a new checkout flow that touches the cart, inventory, and payment services. We need integration tests designed for it.\"\\nassistant: \"I'll use the test-designer agent to design comprehensive integration and end-to-end test scenarios that cover the interactions between these services.\"\\n<commentary>\\nSince integration and end-to-end test scenarios need to be designed for a multi-service feature, use the test-designer agent.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when new functionality needs test coverage defined in a way that follows established conventions, when existing tests are broken or incomplete after a refactor and need redesign plus extension at the specification level, when specific error paths or edge cases need clearly defined coverage scenarios, or when integration or end-to-end test scenarios need to be designed. This agent strictly operates at the design and specification level — it does not generate, edit, or modify any code or test files.
+
+  <example>
+  Context: The user has just implemented a new authentication middleware and wants to know what tests should be written.
+  user: "I just finished the new JWT authentication middleware. What tests should we write for it?"
+  assistant: "Let me use the test-designer agent to analyze your existing test patterns and produce a comprehensive test design for the new middleware."
+  <commentary>
+  Since new functionality has been introduced and the user wants test coverage defined, launch the test-designer agent to read existing tests and produce a detailed test specification.
+  </commentary>
+  </example>
+
+  <example>
+  Context: A refactor broke several existing tests and the team needs to understand what the test coverage should look like going forward.
+  user: "We refactored the payment service and a bunch of tests are now broken or outdated. Can you help figure out what the tests should cover?"
+  assistant: "I'll use the test-designer agent to review the current state of the tests and the refactored code, then produce a redesigned test specification."
+  <commentary>
+  Since existing tests are broken after a refactor and need redesign at the specification level, use the test-designer agent.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user wants to make sure all edge cases for a newly written data validation function are covered.
+  user: "I want to make sure we're covering all the edge cases for the new input validation logic."
+  assistant: "Let me use the test-designer agent to identify all meaningful edge cases and define clear coverage scenarios for the validation logic."
+  <commentary>
+  Since specific edge cases need clearly defined coverage scenarios, use the test-designer agent to produce a thorough specification.
+  </commentary>
+  </example>
+
+  <example>
+  Context: A new feature spans multiple services and needs end-to-end test scenarios defined.
+  user: "We have a new checkout flow that touches the cart, inventory, and payment services. We need integration tests designed for it."
+  assistant: "I'll use the test-designer agent to design comprehensive integration and end-to-end test scenarios that cover the interactions between these services."
+  <commentary>
+  Since integration and end-to-end test scenarios need to be designed for a multi-service feature, use the test-designer agent.
+  </commentary>
+  </example>
 tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: orange

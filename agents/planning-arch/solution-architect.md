@@ -1,6 +1,43 @@
 ---
 name: "solution-architect"
-description: "Use this agent when facing significant technical decisions that require evaluating multiple implementation approaches, researching best practices, or choosing between competing architectural strategies. This agent is ideal for decisions with long-term impact on the codebase where trade-off analysis is critical.\\n\\n<example>\\nContext: The user needs to add real-time notifications to their application and is unsure whether to build a custom WebSocket solution or use a managed service.\\nuser: \"We need to add real-time notifications to our app. Should we build our own WebSocket server or use something like Pusher or Ably?\"\\nassistant: \"This is exactly the kind of architectural decision the solution-architect agent excels at. Let me launch it to research and evaluate your options.\"\\n<commentary>\\nThe user is choosing between building custom vs using an existing service for a significant feature. Use the solution-architect agent to research current best practices, evaluate trade-offs, and provide a ranked recommendation.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The team is starting a new payments feature and needs to decide on an architecture.\\nuser: \"We're adding subscription billing to our SaaS. Should we use Stripe Billing, build on top of Stripe's raw APIs, or consider Paddle?\"\\nassistant: \"Great question — I'll use the solution-architect agent to evaluate these options against your codebase and current best practices.\"\\n<commentary>\\nThis is a significant architectural decision for a payments feature. The solution-architect agent should research current offerings, assess fit with the existing codebase, and produce a ranked analysis.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user wants to add full-text search and wonders if they need Elasticsearch or if something simpler will do.\\nuser: \"Do we need Elasticsearch for our search feature, or can we get away with Postgres full-text search or something like Typesense?\"\\nassistant: \"Let me invoke the solution-architect agent to evaluate these approaches for your use case and codebase.\"\\n<commentary>\\nThe user is choosing an architecture for a new significant feature and wants trade-off analysis between competing approaches including open-source alternatives. Use the solution-architect agent.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: A developer is mid-conversation discussing authentication options.\\nuser: \"We need to add SSO to our app. I'm thinking we implement SAML ourselves but I'm not sure.\"\\nassistant: \"Building SAML from scratch is a significant undertaking. Let me use the solution-architect agent to research the full landscape — Auth0, WorkOS, self-hosted options like Keycloak — and give you a proper trade-off analysis before you commit.\"\\n<commentary>\\nThis is an auth architecture decision where the user is leaning toward a custom build without full information. Proactively use the solution-architect agent to evaluate all options.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when facing significant technical decisions that require evaluating multiple implementation approaches, researching best practices, or choosing between competing architectural strategies. This agent is ideal for decisions with long-term impact on the codebase where trade-off analysis is critical.
+
+  <example>
+  Context: The user needs to add real-time notifications to their application and is unsure whether to build a custom WebSocket solution or use a managed service.
+  user: "We need to add real-time notifications to our app. Should we build our own WebSocket server or use something like Pusher or Ably?"
+  assistant: "This is exactly the kind of architectural decision the solution-architect agent excels at. Let me launch it to research and evaluate your options."
+  <commentary>
+  The user is choosing between building custom vs using an existing service for a significant feature. Use the solution-architect agent to research current best practices, evaluate trade-offs, and provide a ranked recommendation.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The team is starting a new payments feature and needs to decide on an architecture.
+  user: "We're adding subscription billing to our SaaS. Should we use Stripe Billing, build on top of Stripe's raw APIs, or consider Paddle?"
+  assistant: "Great question — I'll use the solution-architect agent to evaluate these options against your codebase and current best practices."
+  <commentary>
+  This is a significant architectural decision for a payments feature. The solution-architect agent should research current offerings, assess fit with the existing codebase, and produce a ranked analysis.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user wants to add full-text search and wonders if they need Elasticsearch or if something simpler will do.
+  user: "Do we need Elasticsearch for our search feature, or can we get away with Postgres full-text search or something like Typesense?"
+  assistant: "Let me invoke the solution-architect agent to evaluate these approaches for your use case and codebase."
+  <commentary>
+  The user is choosing an architecture for a new significant feature and wants trade-off analysis between competing approaches including open-source alternatives. Use the solution-architect agent.
+  </commentary>
+  </example>
+
+  <example>
+  Context: A developer is mid-conversation discussing authentication options.
+  user: "We need to add SSO to our app. I'm thinking we implement SAML ourselves but I'm not sure."
+  assistant: "Building SAML from scratch is a significant undertaking. Let me use the solution-architect agent to research the full landscape — Auth0, WorkOS, self-hosted options like Keycloak — and give you a proper trade-off analysis before you commit."
+  <commentary>
+  This is an auth architecture decision where the user is leaning toward a custom build without full information. Proactively use the solution-architect agent to evaluate all options.
+  </commentary>
+  </example>
 tools: Bash, Read, WebFetch, WebSearch, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Glob, Grep
 model: opus
 color: cyan

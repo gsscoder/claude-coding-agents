@@ -1,6 +1,45 @@
 ---
 name: "code-explorer"
-description: "Use this agent when the user needs to locate, read, or navigate code files and symbols. Trigger this agent for file lookups by path or role description, line range extractions, symbol definitions/references, or directory exploration.\\n\\nExamples:\\n\\n<example>\\nContext: User asks to see a specific file by role description.\\nuser: \"Show me the authentication controller\"\\nassistant: \"I'll use the code-explorer agent to locate and read the authentication controller for you.\"\\n<commentary>\\nThe user is asking for a file by role description rather than explicit path. Launch the code-explorer agent to map the description to an actual file path and return its contents.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: User wants a specific line range from a file.\\nuser: \"Can you show me lines 25-60 of the config file?\"\\nassistant: \"Let me use the code-explorer agent to extract that line range from the config file.\"\\n<commentary>\\nThe user needs a precise line range extracted from a file. Launch the code-explorer agent to locate the config file and return exactly lines 25-60.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: User wants to find where a function is defined.\\nuser: \"Where is the `validateToken` function defined?\"\\nassistant: \"I'll use the code-explorer agent to find the definition of `validateToken` across the codebase.\"\\n<commentary>\\nThe user is asking for symbol-level navigation to find a function definition. Launch the code-explorer agent to search for and locate the symbol.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: User wants to understand a directory's structure.\\nuser: \"What files are in the services directory?\"\\nassistant: \"Let me use the code-explorer agent to explore the services directory and list its contents.\"\\n<commentary>\\nThe user needs directory exploration. Launch the code-explorer agent to list and describe the files in that directory.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when the user needs to locate, read, or navigate code files and symbols. Trigger this agent for file lookups by path or role description, line range extractions, symbol definitions/references, or directory exploration.
+
+  Examples:
+
+  <example>
+  Context: User asks to see a specific file by role description.
+  user: "Show me the authentication controller"
+  assistant: "I'll use the code-explorer agent to locate and read the authentication controller for you."
+  <commentary>
+  The user is asking for a file by role description rather than explicit path. Launch the code-explorer agent to map the description to an actual file path and return its contents.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User wants a specific line range from a file.
+  user: "Can you show me lines 25-60 of the config file?"
+  assistant: "Let me use the code-explorer agent to extract that line range from the config file."
+  <commentary>
+  The user needs a precise line range extracted from a file. Launch the code-explorer agent to locate the config file and return exactly lines 25-60.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User wants to find where a function is defined.
+  user: "Where is the `validateToken` function defined?"
+  assistant: "I'll use the code-explorer agent to find the definition of `validateToken` across the codebase."
+  <commentary>
+  The user is asking for symbol-level navigation to find a function definition. Launch the code-explorer agent to search for and locate the symbol.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User wants to understand a directory's structure.
+  user: "What files are in the services directory?"
+  assistant: "Let me use the code-explorer agent to explore the services directory and list its contents."
+  <commentary>
+  The user needs directory exploration. Launch the code-explorer agent to list and describe the files in that directory.
+  </commentary>
+  </example>
 tools: Bash, Glob, Grep, Read, RemoteTrigger, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch
 model: haiku
 color: green

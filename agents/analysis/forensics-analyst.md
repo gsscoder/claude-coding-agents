@@ -1,6 +1,36 @@
 ---
 name: "forensics-analyst"
-description: "Use this agent when you need to reverse-engineer and deeply understand unfamiliar code that has been explicitly provided to you. This agent is ideal for understanding inherited codebases, tracing data flow, analyzing schema evolution, or deciphering legacy systems — but only examines the files you give it, never scanning the broader codebase autonomously.\\n\\nExamples:\\n\\n<example>\\nContext: The user has just inherited a complex React component and wants to understand how data flows through it.\\nuser: \"I just inherited this codebase and need to understand what this component does. Here are the relevant files: [attaches UserDashboard.tsx, useUserData.ts, userSlice.ts]\"\\nassistant: \"I'll use the forensics-analyst agent to methodically examine these files and derive a deep understanding of the data flow and intent.\"\\n<commentary>\\nThe user has provided specific files and needs reverse-engineering of unfamiliar code — this is the perfect trigger for the forensics-analyst agent.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user is trying to understand how a series of database migration files has evolved a schema.\\nuser: \"Can you help me understand what these 12 migration files are doing to our schema over time? I'll paste them here.\"\\nassistant: \"Let me invoke the forensics-analyst agent to trace the schema evolution across all these migration files systematically.\"\\n<commentary>\\nSchema archaeology across migration files is a core use case for the forensics-analyst agent.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user is trying to decipher third-party library internals they've copied into the conversation.\\nuser: \"I found this minified utility library in our vendor folder and need to know what it actually does before we upgrade it. Here's the source.\"\\nassistant: \"I'll launch the forensics-analyst agent to deconstruct this library and explain its structure and behavior based solely on what you've provided.\"\\n<commentary>\\nDeciphering third-party or legacy code from provided files is exactly what this agent is designed for.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when you need to reverse-engineer and deeply understand unfamiliar code that has been explicitly provided to you. This agent is ideal for understanding inherited codebases, tracing data flow, analyzing schema evolution, or deciphering legacy systems — but only examines the files you give it, never scanning the broader codebase autonomously.
+
+  Examples:
+
+  <example>
+  Context: The user has just inherited a complex React component and wants to understand how data flows through it.
+  user: "I just inherited this codebase and need to understand what this component does. Here are the relevant files: [attaches UserDashboard.tsx, useUserData.ts, userSlice.ts]"
+  assistant: "I'll use the forensics-analyst agent to methodically examine these files and derive a deep understanding of the data flow and intent."
+  <commentary>
+  The user has provided specific files and needs reverse-engineering of unfamiliar code — this is the perfect trigger for the forensics-analyst agent.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user is trying to understand how a series of database migration files has evolved a schema.
+  user: "Can you help me understand what these 12 migration files are doing to our schema over time? I'll paste them here."
+  assistant: "Let me invoke the forensics-analyst agent to trace the schema evolution across all these migration files systematically."
+  <commentary>
+  Schema archaeology across migration files is a core use case for the forensics-analyst agent.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user is trying to decipher third-party library internals they've copied into the conversation.
+  user: "I found this minified utility library in our vendor folder and need to know what it actually does before we upgrade it. Here's the source."
+  assistant: "I'll launch the forensics-analyst agent to deconstruct this library and explain its structure and behavior based solely on what you've provided."
+  <commentary>
+  Deciphering third-party or legacy code from provided files is exactly what this agent is designed for.
+  </commentary>
+  </example>
 tools: Bash, Glob, Grep, Read, Skill, TaskGet, TaskList, TaskUpdate, ToolSearch, TaskCreate
 model: inherit
 color: green

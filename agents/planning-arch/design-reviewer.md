@@ -1,6 +1,43 @@
 ---
 name: "design-reviewer"
-description: "Use this agent when a user explicitly points to a specific file, directory, or component and wants it reviewed for over-engineering, unnecessary complexity, or premature abstractions. This agent requires explicit scoping and does not scan the entire codebase unsolicited.\\n\\n<example>\\nContext: The user has just written a new service layer and wants to know if it's over-engineered.\\nuser: \"I just finished writing the UserService module in src/services/user/. Can you review it for over-engineering?\"\\nassistant: \"I'll use the design-reviewer agent to analyze the UserService module for unnecessary complexity and premature abstractions.\"\\n<commentary>\\nThe user has explicitly scoped the review to src/services/user/, making this a perfect trigger for the design-reviewer agent.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user is evaluating whether a design pattern they implemented is actually justified.\\nuser: \"I added a full CQRS pattern to src/orders/. Was that overkill for a simple CRUD service?\"\\nassistant: \"Let me launch the design-reviewer agent to assess whether the CQRS implementation in src/orders/ is proportionate to the problem it's solving.\"\\n<commentary>\\nThe user is questioning a specific architectural decision in an explicit directory — the design-reviewer agent should evaluate pattern justification.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: The user is about to commit to an architectural decision and wants a second opinion.\\nuser: \"Before I finalize this ADR for the new payment processing module in docs/adr/payment-processor.md, can you review if the proposed design is too complex?\"\\nassistant: \"I'll invoke the design-reviewer agent to evaluate the architectural decision record and flag any over-engineered patterns before you commit.\"\\n<commentary>\\nReviewing an ADR before it's committed is an explicit scoping trigger for the design-reviewer agent.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: A developer has inherited legacy code that feels harder to work with than it should be.\\nuser: \"I inherited this notification system in lib/notifications/ and it feels way more complicated than it needs to be. Can you take a look?\"\\nassistant: \"I'll use the design-reviewer agent to analyze the notification system in lib/notifications/ and identify any unjustified complexity.\"\\n<commentary>\\nThe user has scoped the review to a specific directory in legacy code — this is a valid trigger for the design-reviewer agent.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when a user explicitly points to a specific file, directory, or component and wants it reviewed for over-engineering, unnecessary complexity, or premature abstractions. This agent requires explicit scoping and does not scan the entire codebase unsolicited.
+
+  <example>
+  Context: The user has just written a new service layer and wants to know if it's over-engineered.
+  user: "I just finished writing the UserService module in src/services/user/. Can you review it for over-engineering?"
+  assistant: "I'll use the design-reviewer agent to analyze the UserService module for unnecessary complexity and premature abstractions."
+  <commentary>
+  The user has explicitly scoped the review to src/services/user/, making this a perfect trigger for the design-reviewer agent.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user is evaluating whether a design pattern they implemented is actually justified.
+  user: "I added a full CQRS pattern to src/orders/. Was that overkill for a simple CRUD service?"
+  assistant: "Let me launch the design-reviewer agent to assess whether the CQRS implementation in src/orders/ is proportionate to the problem it's solving."
+  <commentary>
+  The user is questioning a specific architectural decision in an explicit directory — the design-reviewer agent should evaluate pattern justification.
+  </commentary>
+  </example>
+
+  <example>
+  Context: The user is about to commit to an architectural decision and wants a second opinion.
+  user: "Before I finalize this ADR for the new payment processing module in docs/adr/payment-processor.md, can you review if the proposed design is too complex?"
+  assistant: "I'll invoke the design-reviewer agent to evaluate the architectural decision record and flag any over-engineered patterns before you commit."
+  <commentary>
+  Reviewing an ADR before it's committed is an explicit scoping trigger for the design-reviewer agent.
+  </commentary>
+  </example>
+
+  <example>
+  Context: A developer has inherited legacy code that feels harder to work with than it should be.
+  user: "I inherited this notification system in lib/notifications/ and it feels way more complicated than it needs to be. Can you take a look?"
+  assistant: "I'll use the design-reviewer agent to analyze the notification system in lib/notifications/ and identify any unjustified complexity."
+  <commentary>
+  The user has scoped the review to a specific directory in legacy code — this is a valid trigger for the design-reviewer agent.
+  </commentary>
+  </example>
 tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch
 model: opus
 color: orange

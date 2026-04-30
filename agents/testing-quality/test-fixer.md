@@ -1,6 +1,45 @@
 ---
 name: "test-fixer"
-description: "Use this agent when tests are failing due to implementation changes and need to be realigned with the current code — not when new tests need to be written. Trigger this agent after a commit or code change has broken existing tests.\\n\\nExamples:\\n\\n<example>\\nContext: The user has just renamed a class and updated its implementation, causing multiple test files to fail.\\nuser: \"I renamed UserService to AccountService and updated the constructor signature. Now 12 tests are failing.\"\\nassistant: \"I'll launch the test-fixer agent to identify the broken test references and make the minimum changes needed to realign them.\"\\n<commentary>\\nThe user has made an implementation change that broke existing tests. Use the test-fixer agent to repair the test references without adding new cases.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: CI is failing after a commit that changed a function's return type.\\nuser: \"CI is red after my last commit. The function now returns an object instead of a string.\"\\nassistant: \"Let me use the test-fixer agent to find which tests depend on the old return type and update their assertions to match the new shape.\"\\n<commentary>\\nA return type change has caused test misalignment. The test-fixer agent should identify the affected assertions and correct them minimally.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: Business logic was updated and hardcoded expected values in tests are now wrong.\\nuser: \"I updated the discount calculation formula. Several unit tests that assert exact totals are now failing.\"\\nassistant: \"I'll invoke the test-fixer agent to locate the hardcoded expected values that no longer match the new formula and correct them.\"\\n<commentary>\\nChanged business logic has invalidated hardcoded assertions. The test-fixer agent should update only the affected expected values to reflect the new correct output.\\n</commentary>\\n</example>\\n\\n<example>\\nContext: A developer changed a function signature and wants to keep moving without debugging tests manually.\\nuser: \"I added a required `locale` parameter to `formatDate()`. Tests are exploding.\"\\nassistant: \"I'll use the test-fixer agent to update all call sites in the test suite to pass a valid `locale` argument.\"\\n<commentary>\\nA signature change broke test call sites. Use the test-fixer agent to apply the minimum fix across affected tests.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when tests are failing due to implementation changes and need to be realigned with the current code — not when new tests need to be written. Trigger this agent after a commit or code change has broken existing tests.
+
+  Examples:
+
+  <example>
+  Context: The user has just renamed a class and updated its implementation, causing multiple test files to fail.
+  user: "I renamed UserService to AccountService and updated the constructor signature. Now 12 tests are failing."
+  assistant: "I'll launch the test-fixer agent to identify the broken test references and make the minimum changes needed to realign them."
+  <commentary>
+  The user has made an implementation change that broke existing tests. Use the test-fixer agent to repair the test references without adding new cases.
+  </commentary>
+  </example>
+
+  <example>
+  Context: CI is failing after a commit that changed a function's return type.
+  user: "CI is red after my last commit. The function now returns an object instead of a string."
+  assistant: "Let me use the test-fixer agent to find which tests depend on the old return type and update their assertions to match the new shape."
+  <commentary>
+  A return type change has caused test misalignment. The test-fixer agent should identify the affected assertions and correct them minimally.
+  </commentary>
+  </example>
+
+  <example>
+  Context: Business logic was updated and hardcoded expected values in tests are now wrong.
+  user: "I updated the discount calculation formula. Several unit tests that assert exact totals are now failing."
+  assistant: "I'll invoke the test-fixer agent to locate the hardcoded expected values that no longer match the new formula and correct them."
+  <commentary>
+  Changed business logic has invalidated hardcoded assertions. The test-fixer agent should update only the affected expected values to reflect the new correct output.
+  </commentary>
+  </example>
+
+  <example>
+  Context: A developer changed a function signature and wants to keep moving without debugging tests manually.
+  user: "I added a required `locale` parameter to `formatDate()`. Tests are exploding."
+  assistant: "I'll use the test-fixer agent to update all call sites in the test suite to pass a valid `locale` argument."
+  <commentary>
+  A signature change broke test call sites. Use the test-fixer agent to apply the minimum fix across affected tests.
+  </commentary>
+  </example>
 tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: red

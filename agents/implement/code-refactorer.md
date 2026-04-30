@@ -1,6 +1,41 @@
 ---
 name: "code-refactorer"
-description: "Use this agent when you need to improve code structure without changing its behavior. This includes extracting methods or classes, renaming symbols and updating all references, restructuring code organization, eliminating duplication, simplifying over-engineered abstractions, or cleaning up messy code after it's working. This agent should NOT be used when you want to add features, fix bugs, or change what the code does.\\n\\nExamples:\\n<example>\\nContext: The user has just implemented a working feature with a large, complex function that does too many things.\\nuser: \"I just got the payment processing working, but the process_payment function is 200 lines long and does validation, API calls, logging, and database updates all in one place.\"\\nassistant: \"Great that it's working! Let me use the code-refactorer agent to break that function into well-organized, focused pieces while keeping behavior identical.\"\\n<commentary>\\nThe code is working but messy — a perfect case for the code-refactorer agent to extract methods and improve structure without touching behavior.\\n</commentary>\\n</example>\\n<example>\\nContext: The user notices a poorly named variable or function used throughout the codebase.\\nuser: \"The function 'do_thing' is called in like 30 places and nobody knows what it does. Can we rename it?\"\\nassistant: \"Absolutely. I'll launch the code-refactorer agent to rename it and update every call site safely.\"\\n<commentary>\\nRenaming with full reference updates across the codebase is exactly what the code-refactorer agent handles.\\n</commentary>\\n</example>\\n<example>\\nContext: The user sees repeated logic scattered across multiple files.\\nuser: \"I keep seeing the same date formatting logic copy-pasted in 8 different service files.\"\\nassistant: \"I'll use the code-refactorer agent to consolidate that into a single shared utility, then update all the usages.\"\\n<commentary>\\nDeduplication without behavior change is a core use case for the code-refactorer agent.\\n</commentary>\\n</example>\\n<example>\\nContext: A developer added excessive abstraction layers that make the code hard to follow.\\nuser: \"Someone added a factory of factories for a config object that only ever has one implementation. It's insane.\"\\nassistant: \"That sounds over-engineered. Let me bring in the code-refactorer agent to collapse those unnecessary abstraction layers.\"\\n<commentary>\\nSimplifying over-engineered code while preserving behavior is exactly what this agent is designed for.\\n</commentary>\\n</example>"
+description: |
+  Use this agent when you need to improve code structure without changing its behavior. This includes extracting methods or classes, renaming symbols and updating all references, restructuring code organization, eliminating duplication, simplifying over-engineered abstractions, or cleaning up messy code after it's working. This agent should NOT be used when you want to add features, fix bugs, or change what the code does.
+
+  Examples:
+  <example>
+  Context: The user has just implemented a working feature with a large, complex function that does too many things.
+  user: "I just got the payment processing working, but the process_payment function is 200 lines long and does validation, API calls, logging, and database updates all in one place."
+  assistant: "Great that it's working! Let me use the code-refactorer agent to break that function into well-organized, focused pieces while keeping behavior identical."
+  <commentary>
+  The code is working but messy — a perfect case for the code-refactorer agent to extract methods and improve structure without touching behavior.
+  </commentary>
+  </example>
+  <example>
+  Context: The user notices a poorly named variable or function used throughout the codebase.
+  user: "The function 'do_thing' is called in like 30 places and nobody knows what it does. Can we rename it?"
+  assistant: "Absolutely. I'll launch the code-refactorer agent to rename it and update every call site safely."
+  <commentary>
+  Renaming with full reference updates across the codebase is exactly what the code-refactorer agent handles.
+  </commentary>
+  </example>
+  <example>
+  Context: The user sees repeated logic scattered across multiple files.
+  user: "I keep seeing the same date formatting logic copy-pasted in 8 different service files."
+  assistant: "I'll use the code-refactorer agent to consolidate that into a single shared utility, then update all the usages."
+  <commentary>
+  Deduplication without behavior change is a core use case for the code-refactorer agent.
+  </commentary>
+  </example>
+  <example>
+  Context: A developer added excessive abstraction layers that make the code hard to follow.
+  user: "Someone added a factory of factories for a config object that only ever has one implementation. It's insane."
+  assistant: "That sounds over-engineered. Let me bring in the code-refactorer agent to collapse those unnecessary abstraction layers."
+  <commentary>
+  Simplifying over-engineered code while preserving behavior is exactly what this agent is designed for.
+  </commentary>
+  </example>
 tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: red

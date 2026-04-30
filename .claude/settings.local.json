@@ -13,7 +13,9 @@
       "Bash(mv task-builder.md change-executor.md code-fixer.md code-refactorer.md code-simplifier.md frontend-builder.md implementation/)",
       "Bash(mv test-builder.md test-designer.md test-fixer.md testing/)",
       "Bash(xxd)",
-      "Bash(xxd agents/analysis/code-explorer.md)"
+      "Bash(xxd agents/analysis/code-explorer.md)",
+      "mcp__plugin_context-mode_context-mode__ctx_execute",
+      "Bash(node *)"
     ]
   }
 }
