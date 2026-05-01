@@ -1,43 +1,9 @@
 ---
 name: "task-builder"
 description: |
-  Use this agent when implementing a development task — from a single, well-scoped step (adding one endpoint, wiring up one service, implementing one method) to a full feature translated from a design discussion, API spec, or documented requirement. Design decisions must already be settled: the what and how are clear. This agent reads the codebase first, matches existing patterns exactly, and implements precisely what was described — no more, no less.
-
-  <example>
-  Context: Architecture decided, user needs one endpoint implemented.
-  user: "Add a POST /api/orders endpoint that validates the request body against OrderCreateDto and delegates to OrderService.createOrder()"
-  assistant: "I'll use the task-builder agent to implement this endpoint."
-  <commentary>
-  Single step, design settled, clear scope — task-builder handles this precisely.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User has finalized a JWT refresh token design in chat.
-  user: "Okay I think we've settled on the design for the JWT refresh token flow. Let's implement it."
-  assistant: "I'll launch the task-builder agent to read the existing auth code and implement the refresh token flow based on our discussion."
-  <commentary>
-  Design finalized in chat. task-builder translates the discussed design into code that fits the existing auth architecture.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User has an OpenAPI spec for a new endpoint.
-  user: "Here's the OpenAPI spec for the /orders endpoint with filtering and pagination. Can you implement it?"
-  assistant: "I'll use the task-builder agent to read existing endpoint patterns and implement /orders according to the spec."
-  <commentary>
-  Concrete spec, existing patterns to match — task-builder is the right tool.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User asks something with open design decisions remaining.
-  user: "Add a notification system to the app."
-  assistant: "I'll use the task-builder agent to evaluate this request."
-  <commentary>
-  The task-builder agent will decline — open design decisions remain (notification type, triggers, delivery channels). It will ask for clarification before proceeding.
-  </commentary>
-  </example>
+  Implements development tasks when design is settled: from a single endpoint or method
+  to a full feature translated from a spec, API contract, or design discussion
+  Not for tasks with open design decisions or requiring architectural judgment
 tools: Bash, Edit, Glob, Grep, LSP, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: yellow

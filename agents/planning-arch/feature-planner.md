@@ -1,43 +1,9 @@
 ---
 name: "feature-planner"
 description: |
-  Use this agent when you need to plan how to implement a feature, break down a feature request into actionable steps, identify affected files and components before writing code, assess risks and architectural concerns, or get a read-only impact analysis of a proposed feature without committing to implementation.
-
-  <example>
-  Context: The user wants to add a new authentication method to an existing application.
-  user: "I want to add OAuth2 social login (Google and GitHub) to our app. We currently use email/password auth."
-  assistant: "Let me use the feature-planner agent to analyze this feature and produce a concrete implementation plan."
-  <commentary>
-  The user has described a non-trivial feature that touches multiple parts of the codebase. Use the feature-planner agent to identify affected files, sequence changes, and surface risks before any code is written.
-  </commentary>
-  </example>
-
-  <example>
-  Context: A team member wants to understand the scope of a proposed feature before a planning meeting.
-  user: "Can you give me a read-only impact assessment of adding real-time notifications to our platform? I don't want implementation steps yet, just what it would touch and what risks we'd face."
-  assistant: "I'll launch the feature-planner agent in review mode to assess the scope and impact without prescribing implementation steps."
-  <commentary>
-  The user explicitly wants impact analysis only, not an implementation plan. Use the feature-planner agent in review mode.
-  </commentary>
-  </example>
-
-  <example>
-  Context: A developer is working from a product ticket and wants to understand the engineering work before starting.
-  user: "Here's the ticket: 'Add CSV export to the reports dashboard.' What files will this touch and what's the best order to tackle it?"
-  assistant: "Let me use the feature-planner agent to read the codebase and produce a prioritized implementation plan for this feature."
-  <commentary>
-  The user wants a sequenced, file-level implementation plan derived from a feature ticket. Use the feature-planner agent in default planning mode.
-  </commentary>
-  </example>
-
-  <example>
-  Context: An engineer is about to start implementing a feature and wants to sanity-check the architecture first.
-  user: "Before I start coding the multi-tenancy feature, can you identify any architectural risks or conflicts with our current data model?"
-  assistant: "I'll use the feature-planner agent to analyze the architectural risks and potential conflicts before you begin implementation."
-  <commentary>
-  The user wants risk and conflict identification before writing code. Use the feature-planner agent in review mode to surface concerns.
-  </commentary>
-  </example>
+  Plans feature implementation: breaks requests into actionable steps, identifies affected files,
+  and assesses risks and architectural concerns — read-only, no code written
+  Not for executing implementation or broad architectural strategy decisions
 tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: purple

@@ -1,34 +1,9 @@
 ---
 name: "test-builder"
 description: |
-  Use this agent when a feature needs tests derived from specifications, design docs, or inline comments — not guesswork. Ideal when: a feature was specified in a design doc and needs tests that validate against the spec; complex logic with edge cases (null inputs, boundary conditions, error states) needs systematic coverage; a refactored component needs a test suite that verifies the original contract is preserved; or tests need to be readable as documentation explaining why each assertion exists.
-
-  <example>
-  Context: The user has just implemented a new payment processing module based on a design doc and wants tests written for it.
-  user: "I've finished implementing the PaymentProcessor class based on the design doc in docs/payment-spec.md. Can you write tests for it?"
-  assistant: "I'll use the test-builder agent to analyze the spec and implementation, then create comprehensive, traceable tests."
-  <commentary>
-  Since the user has a spec-driven implementation that needs test coverage, use the test-builder agent to derive tests from the specification rather than guessing.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The user has refactored a core utility and wants to ensure the original contract is preserved.
-  user: "I just refactored the date parsing utility — it has a lot of edge cases around timezones and null values. Please write tests."
-  assistant: "Let me use the test-builder agent to read the existing code, identify all edge cases and contracts, and build a traceable test suite."
-  <commentary>
-  Since the refactored component has complex edge cases and an implicit contract to preserve, the test-builder agent is the right tool to systematically derive tests from evidence.
-  </commentary>
-  </example>
-
-  <example>
-  Context: A developer wrote a function with detailed inline comments describing expected behavior.
-  user: "I wrote a new rate-limiter function with inline comments explaining all the rules. Write tests for it."
-  assistant: "I'll launch the test-builder agent to read the inline comments as a spec and produce tests that are traceable to each documented rule."
-  <commentary>
-  Inline comments serve as the specification here — the test-builder agent will use them as evidence to justify every test case.
-  </commentary>
-  </example>
+  Writes tests derived from specifications, design docs, or existing contracts — with
+  traceable assertions and systematic edge case coverage
+  Not for designing what tests should exist or fixing broken tests after refactors
 tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: yellow

@@ -1,34 +1,9 @@
 ---
 name: "code-simplifier"
 description: |
-  Use this agent when you need to reduce unnecessary complexity, over-engineering, or premature abstractions in existing code without changing its behavior. Specifically invoke it for: collapsing abstraction layers with no polymorphic justification (factory of factories, single-impl interfaces, wrapper-of-wrappers), inlining trivial helpers or pass-through functions that obscure rather than clarify, removing indirection added 'for future flexibility' that never materialized, flattening deep inheritance or delegation chains where a plain function or struct would suffice, reducing boilerplate that exists for its own sake (excessive DTOs, mappers, adapters with no real conversion logic), and simplifying over-parameterized or overly configurable code where only one configuration is ever used.
-
-  <example>
-  Context: The user has just written or refactored a module and wants it reviewed for unnecessary complexity.
-  user: "I just finished refactoring the payment processing module. Can you take a look?"
-  assistant: "I'll review the payment processing module for unnecessary complexity. Let me launch the code-simplifier agent to analyze it."
-  <commentary>
-  The user has recently written code and is asking for a review. Use the Agent tool to launch the code-simplifier agent to identify and remove over-engineering.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The user notices their codebase has accumulated layers of abstraction over time.
-  user: "Our service layer has interfaces, factories, and adapters everywhere but we only ever have one implementation of each. It feels bloated."
-  assistant: "That sounds like a classic over-abstraction problem. I'll use the code-simplifier agent to analyze and collapse those unnecessary layers."
-  <commentary>
-  The user is describing single-impl interfaces and factories with no polymorphic justification — a perfect case for the code-simplifier agent.
-  </commentary>
-  </example>
-
-  <example>
-  Context: A developer has written utility helpers that do almost nothing.
-  user: "I have a bunch of helper functions like `formatName(name) { return name.trim(); }` scattered around. Should I keep them?"
-  assistant: "Those look like trivial pass-through helpers that obscure more than they clarify. Let me use the code-simplifier agent to evaluate which ones should be inlined."
-  <commentary>
-  Trivial helpers that add indirection without value are a key target for the code-simplifier agent.
-  </commentary>
-  </example>
+  Removes unnecessary complexity: collapses unjustified abstraction layers, inlines trivial
+  pass-through helpers, eliminates speculative indirection, and reduces purposeless boilerplate
+  Not for refactoring working structure or fixing bugs
 tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: green

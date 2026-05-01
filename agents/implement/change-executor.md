@@ -1,43 +1,9 @@
 ---
 name: "change-executor"
 description: |
-  Use this agent when a single, clearly scoped code modification needs to be applied — such as renaming a symbol, swapping a value, updating a config entry, adjusting a function signature, or making a small bounded addition or removal. The task must be expressible in one sentence with no open design decisions remaining.
-
-  <example>
-  Context: The user wants to rename a constant across the codebase.
-  user: "Rename the constant MAX_RETRY_COUNT to MAX_RETRIES in the config module"
-  assistant: "I'll use the change-executor agent to apply this rename."
-  <commentary>
-  This is a single, clearly scoped rename operation. Use the change-executor agent to apply the minimal change.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The user wants to update a configuration value.
-  user: "Change the default timeout in src/config/settings.ts from 3000 to 5000"
-  assistant: "I'll launch the change-executor agent to update that value."
-  <commentary>
-  This is an atomic value swap in a known file. The change-executor agent is the right tool.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The user wants to add a parameter to a function.
-  user: "Add an optional `locale: string` parameter to the formatDate function in src/utils/date.ts"
-  assistant: "I'll use the change-executor agent to update the function signature."
-  <commentary>
-  This is a bounded function signature change. Use the change-executor agent.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The user asks for something too broad.
-  user: "Refactor the authentication module to be more maintainable"
-  assistant: "I'll use the change-executor agent to evaluate this request."
-  <commentary>
-  The change-executor agent will correctly decline this request as too broad and ask for it to be broken into smaller, atomic operations.
-  </commentary>
-  </example>
+  Applies a single atomic code change: rename a symbol, swap a value, update a config entry,
+  or make a small bounded addition — expressible in one sentence with no open design decisions
+  Not for multi-step features, bug fixes requiring diagnosis, or anything requiring judgment
 tools: Bash, Edit, Glob, Grep, LSP, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: yellow

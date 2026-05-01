@@ -1,39 +1,9 @@
 ---
 name: "task-planner"
 description: |
-  Use this agent when you need strategic project planning, roadmap creation, or architectural guidance. Specifically use it when:
-  - Planning the next development phase after completing a major milestone
-  - Identifying technical debt and prioritizing improvement work
-  - Creating a long-term development strategy aligned with project goals
-  - Evaluating architectural decisions and proposing evolutionary paths
-  - Assessing feature dependencies to determine the right implementation order
-
-  <example>
-  Context: The user has just completed a major feature overhaul and wants to plan the next phase of development.
-  user: "We just finished the authentication system refactor. What should we tackle next?"
-  assistant: "Let me use the task-planner agent to analyze the current state of the project and develop a concrete roadmap for the next development phase."
-  <commentary>
-  Since the user has completed a major milestone and needs strategic direction, launch the task-planner agent to assess the codebase and produce a prioritized roadmap.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The user is concerned about technical debt accumulating in their project.
-  user: "I feel like we have a lot of technical debt building up. Can you help us figure out what to address and in what order?"
-  assistant: "I'll use the task-planner agent to audit the codebase for technical debt and produce a prioritized improvement roadmap with sequencing rationale."
-  <commentary>
-  The user needs strategic assessment and prioritization of technical debt — a perfect use case for the task-planner agent.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The team is debating whether to adopt a new architectural pattern.
-  user: "We're considering moving to a microservices architecture. Is now the right time, and how would we get there?"
-  assistant: "I'll invoke the task-planner agent to evaluate our current architecture, assess readiness, and map out a realistic evolutionary path."
-  <commentary>
-  Architectural decision-making and evolutionary planning is a core responsibility of the task-planner agent.
-  </commentary>
-  </example>
+  Strategic planning: roadmaps, next-phase prioritization, technical debt assessment,
+  feature dependency ordering, and architectural evolution paths
+  Not for feature-level implementation planning or single-task breakdowns
 tools: Bash, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, WebFetch, WebSearch
 model: inherit
 color: purple

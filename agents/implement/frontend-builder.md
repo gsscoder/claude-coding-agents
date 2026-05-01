@@ -1,34 +1,9 @@
 ---
 name: "frontend-builder"
 description: |
-  Use this agent when modifying or building frontend components, pages, layouts, or styles in any framework or stack (React, HTMX, ASP.NET Razor, Vue, Svelte, Angular, plain HTML/CSS/JS, etc.), applying UI changes described by the user without interpretation or design expansion, implementing frontend features that require touching markup, styles, scripts, or component logic, or fixing visual or behavioral regressions in the UI layer.
-
-  <example>
-  Context: User wants to add a loading spinner to a React button component.
-  user: "Add a loading spinner inside the SubmitButton component when isLoading is true"
-  assistant: "I'll use the frontend-builder agent to implement this change precisely."
-  <commentary>
-  The user is requesting a specific UI modification to an existing component. Launch the frontend-builder agent to read the existing code and apply the exact change requested.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User is working on an HTMX-based page and wants a form change.
-  user: "Change the contact form to submit via hx-post to /api/contact and show a success message in #form-result"
-  assistant: "Let me use the frontend-builder agent to apply that HTMX change."
-  <commentary>
-  This is a targeted markup/behavior change on a specific frontend stack. Use the frontend-builder agent to read the existing form and apply exactly what was described.
-  </commentary>
-  </example>
-
-  <example>
-  Context: User wants a CSS fix on a Razor page.
-  user: "The navbar is overlapping the hero section on mobile. Fix it."
-  assistant: "I'll launch the frontend-builder agent to diagnose and fix the visual regression."
-  <commentary>
-  This is a UI regression fix. The frontend-builder agent should read the relevant files, identify the CSS conflict, and apply a minimal targeted fix.
-  </commentary>
-  </example>
+  Builds and modifies frontend components, pages, layouts, and styles across any framework
+  (React, Vue, HTMX, Svelte, Razor, plain HTML/CSS/JS) — applying UI changes exactly as specified
+  Not for backend logic, API design, or resolving ambiguous design intent
 tools: Bash, Edit, Glob, Grep, ListMcpResourcesTool, LSP, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write, ReadMcpResourceTool
 model: inherit
 color: orange

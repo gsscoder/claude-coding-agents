@@ -1,43 +1,9 @@
 ---
 name: "code-analyst"
 description: |
-  Use this agent when you need deep investigative analysis of code, documentation, or specifications without any modifications. This includes tracing feature implementations, understanding API behaviors, synthesizing scattered information, evaluating engineering complexity relative to project stage, or assessing abstraction and dependency weight.
-
-  <example>
-  Context: The user wants to understand how authentication is implemented in an unfamiliar codebase.
-  user: "How does our authentication system work? I can't figure out where tokens are validated."
-  assistant: "Let me launch the code-analyst agent to trace the authentication flow through the codebase."
-  <commentary>
-  The user needs investigative analysis of an existing system without modifying anything — this is exactly what the code-analyst agent is designed for.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The user is evaluating whether a PoC has accumulated too much complexity.
-  user: "We started this as a proof of concept but the codebase feels really heavy. Is it over-engineered?"
-  assistant: "I'll use the code-analyst agent to assess the abstraction depth and dependency weight relative to the project's current stage."
-  <commentary>
-  Evaluating over-engineering and premature generalization is a core use case for the code-analyst agent.
-  </commentary>
-  </example>
-
-  <example>
-  Context: The user needs to understand a confusing API specification.
-  user: "The docs say this endpoint returns a 200 even on failure — can you figure out what's actually going on?"
-  assistant: "Let me invoke the code-analyst agent to cross-reference the documentation, implementation, and any test cases to clarify the actual behavior."
-  <commentary>
-  Clarifying ambiguous specifications by examining multiple sources is a primary code-analyst responsibility.
-  </commentary>
-  </example>
-
-  <example>
-  Context: A developer is trying to trace how a recently added feature propagates through the system.
-  user: "Someone added a feature flag system last sprint. I need to understand how it flows from config to runtime."
-  assistant: "I'll use the code-analyst agent to trace the feature flag implementation end-to-end."
-  <commentary>
-  Tracing an implementation across multiple files and layers is a core investigative task for this agent.
-  </commentary>
-  </example>
+  Deep read-only investigation without modification: tracing feature implementations, understanding
+  API behaviors, synthesizing scattered information, evaluating abstraction weight and engineering complexity
+  Not for code modification, refactoring, or planning implementation steps
 tools: Bash, CronCreate, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: purple
