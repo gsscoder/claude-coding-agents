@@ -1,12 +1,21 @@
 # Coding Agents
 
-A collection of specialized agents for [Claude Code](https://claude.com/claude-code), designed to enhance your AI-assisted development workflow with focused, expert capabilities.
+A collection of specialized agents for [Claude Code](https://claude.com/claude-code), designed to enhance AI-assisted development workflow with focused, expert capabilities.
 
 ## What are Custom Agents?
 Custom agents are specialized AI assistants in Claude Code that focus on specific tasks. Each agent is optimized with:
 - Tailored instructions for their domain
 - Specific tool permissions
 - Clear operational guidelines
+
+## Repo Purpose
+This repo was created to use at work the agents I built for my side projects. Initially, there weren’t many changes from the Claude Code scaffold, but over time I gradually learned more details — so yes, in part (though to a lesser extent) it’s also a learning project.
+These are the more curated agents, sometimes created by merging overly specialized definitions into a single one:
+- ✅ implement/**task-builder.md**
+- ✅ implement/**frontend-builder.md**
+- ✅ testing-quality/**test-builder.md**
+
+Once I’ve completed a thorough review of every agent, the list will be removed.
 
 ## Which Agent to Install
 Subagents run in isolated contexts, but their **metadata is loaded** into the parent context **at startup**, like other tools, adding some upfront token overhead at scale. For this reason, only include the subagents you actually need to avoid unnecessary context bloat.
@@ -36,8 +45,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **frontend-builder** (inherit) - Modify or build frontend components, pages, layouts, and styles across any stack with surgical precision, applying UI changes exactly as described without scope expansion
 
 ### Testing & Quality
-- **test-builder** (inherit) - Create comprehensive, well-reasoned test suites with clear traceability to requirements
-- **test-designer** (inherit) - Design and implement tests that validate functionality, match existing patterns, and provide meaningful coverage
+- **test-builder** (inherit) - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code
 - **test-fixer** (inherit) - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests
 
 ### Documentation & Maintenance
