@@ -17,6 +17,13 @@ These are the more curated agents, sometimes created by merging overly specializ
 
 Once I’ve completed a thorough review of every agent, the list will be removed.
 
+### What I’ve Learned
+This is why agent definitions need refinement:
+- Claude Code generates overly verbose descriptions in both content and YAML format, which is inefficient for context usage and useless when the **agent name** is explicitly specified in the prompt (ame and description metadata are loaded into the context at startup or with `/reload-plugins` command)
+- The definition is **polluted with bold** and other text embellishments that only carry meaningful emphasis for **human readers**, without providing effective signals to the model
+- There are too many **blank lines** and **trailing periods** that could be removed to reduce token processing overhead
+- Some concepts are repeated with **excessive redundancy**
+
 ## Which Agent to Install
 Subagents run in isolated contexts, but their **metadata is loaded** into the parent context **at startup**, like other tools, adding some upfront token overhead at scale. For this reason, only include the subagents you actually need to avoid unnecessary context bloat.
 It is preferable to **install them at the project level** to maintain tighter control over the context.
@@ -33,7 +40,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **solution-architect** (opus) - Evaluate different implementation approaches and recommend optimal solutions for technical problems
 - **design-reviewer** (opus) - Identify unnecessary complexity and over-engineered patterns in specific code components or architectural decisions
 - **feature-planner** (opus) - Plan implementation changes for a submitted feature description; identify affected files, required changes, sequencing, and risks; can also review feature scope and codebase impact without planning implementation steps
-- **task-planner** (inherit)- Analyze project state and develop strategic roadmaps for future development
+- **task-planner** (inherit) - Analyze project state and develop strategic roadmaps for future development
 - **task-completer** (inherit) - Systematically recover from failed tasks by learning from past attempts and identifying root causes
 
 ### Development & Implementation
@@ -78,8 +85,7 @@ xcopy /e /i .\agents\implement\* $home\.claude\agents\
 ```
 
 ## Usage
-Agents are automatically invoked by Claude Code based on your requests and the task context. You can also explicitly request a specific agent:
-
+Even if agents may be automatically invoked by Claude Code based on your request and the task context, it is better to explicitly specify the agent in the prompt:
 ```
 "Use the code-explorer agent to find all authentication files"
 "I need the feature-builder agent to implement this spec"
