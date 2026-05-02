@@ -4,7 +4,7 @@ description: |
   Reviews explicitly scoped files or directories for over-engineering, unnecessary complexity,
   and unjustified design patterns
   Not for codebase-wide scans or reviews without an explicit scope provided
-tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch
+tools: Bash, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch
 model: opus
 color: orange
 ---

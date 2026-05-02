@@ -4,7 +4,7 @@ description: |
   Locates and reads code by path, role description, or symbol name; extracts line ranges
   and navigates directory structure
   Not for analysis, modification, or understanding what code does
-tools: Bash, Glob, Grep, Read, RemoteTrigger, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch
+tools: Bash, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch
 model: haiku
 color: green
 ---

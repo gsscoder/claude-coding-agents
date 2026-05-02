@@ -4,7 +4,7 @@ description: |
   Deep read-only investigation without modification: tracing feature implementations, understanding
   API behaviors, synthesizing scattered information, evaluating abstraction weight and engineering complexity
   Not for code modification, refactoring, or planning implementation steps
-tools: Bash, CronCreate, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
+tools: Bash, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch
 model: inherit
 color: purple
 ---

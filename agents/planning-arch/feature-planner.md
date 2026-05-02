@@ -4,7 +4,7 @@ description: |
   Plans feature implementation: breaks requests into actionable steps, identifies affected files,
   and assesses risks and architectural concerns — read-only, no code written
   Not for executing implementation or broad architectural strategy decisions
-tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
+tools: Bash, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: purple
 ---
