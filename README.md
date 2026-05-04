@@ -43,7 +43,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **task-completer** (inherit) - Systematically recover from failed tasks by learning from past attempts and identifying root causes
 
 ### Development & Implementation
-- **task-builder** (inherit) - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; declines requests with open design decisions remaining.
+- **task-builder** (inherit) - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.
 - **change-executor** (inherit) - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
 - **code-fixer** (inherit) - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
 - **code-refactorer** (inherit) - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
