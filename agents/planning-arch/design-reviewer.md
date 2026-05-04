@@ -5,7 +5,7 @@ description: |
   and unjustified design patterns
   Not for codebase-wide scans or reviews without an explicit scope provided
 tools: Bash, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch
-model: opus
+model: inherit
 color: orange
 ---
 

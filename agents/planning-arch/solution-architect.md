@@ -5,7 +5,7 @@ description: |
   best practices, analyzes trade-offs, and produces ranked recommendations
   Not for feature-level implementation planning or executing chosen solutions
 tools: Bash, Read, WebFetch, WebSearch, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Glob, Grep
-model: opus
+model: inherit
 color: cyan
 ---
 

@@ -28,34 +28,36 @@ Subagents run in isolated contexts, but their **metadata is loaded** into the pa
 It is preferable to **install them at the project level** to maintain tighter control over the context.
 
 ## Available Agents
-**NOTE**: all agents have memory disabled.
+**Common features**:
+- Memory is disabled
+- Model is set to `inherit`
 
 ### Code Navigation & Analysis
-- **code-explorer** (haiku) - Intelligently locate and read files by path or role description using LSP for semantic navigation; extract specific code sections with surgical precision.
-- **code-analyst** (inherit) - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications.
-- **forensics-analyst** (inherit) - Reverse-engineer unfamiliar codebases and understand the structure, behavior, and intent of code you didn't write; analyze only provided files without autonomous exploration.
+- **code-explorer** - Intelligently locate and read files by path or role description using LSP for semantic navigation; extract specific code sections with surgical precision.
+- **code-analyst** - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications.
+- **forensics-analyst** - Reverse-engineer unfamiliar codebases and understand the structure, behavior, and intent of code you didn't write; analyze only provided files without autonomous exploration.
 
 ### Planning & Architecture
-- **solution-architect** (opus) - Evaluate different implementation approaches and recommend optimal solutions for technical problems.
-- **design-reviewer** (opus) - Identify unnecessary complexity and over-engineered patterns in specific code components or architectural decisions.
-- **feature-planner** (opus) - Plan implementation changes for a submitted feature description; identify affected files, required changes, sequencing, and risks; can also review feature scope and codebase impact without planning implementation steps.
-- **task-planner** (inherit) - Analyze project state and develop strategic roadmaps for future development.
-- **task-completer** (inherit) - Systematically recover from failed tasks by learning from past attempts and identifying root causes
+- **solution-architect** - Evaluate different implementation approaches and recommend optimal solutions for technical problems.
+- **design-reviewer** - Identify unnecessary complexity and over-engineered patterns in specific code components or architectural decisions.
+- **feature-planner** - Plan implementation changes for a submitted feature description; identify affected files, required changes, sequencing, and risks; can also review feature scope and codebase impact without planning implementation steps.
+- **task-planner** - Analyze project state and develop strategic roadmaps for future development.
+- **task-completer** - Systematically recover from failed tasks by learning from past attempts and identifying root causes
 
 ### Development & Implementation
-- **task-builder** (inherit) - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.
-- **change-executor** (inherit) - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
-- **code-fixer** (inherit) - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
-- **code-refactorer** (inherit) - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
-- **code-simplifier** (inherit) - Reduce over-engineering, unnecessary abstractions, and accidental complexity while preserving identical behavior.
-- **frontend-builder** (inherit) - Modify or build frontend components, pages, layouts, and styles across any stack with surgical precision; when building from scratch with design latitude, produces distinctive production-grade interfaces with a committed aesthetic direction.
+- **task-builder** - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.
+- **change-executor** - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
+- **code-fixer** - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
+- **code-refactorer** - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
+- **code-simplifier** - Reduce over-engineering, unnecessary abstractions, and accidental complexity while preserving identical behavior.
+- **frontend-builder** - Modify or build frontend components, pages, layouts, and styles across any stack with surgical precision; when building from scratch with design latitude, produces distinctive production-grade interfaces with a committed aesthetic direction.
 
 ### Testing & Quality
-- **test-builder** (inherit) - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
-- **test-fixer** (inherit) - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
+- **test-builder** - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
+- **test-fixer** - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
 
 ### Documentation & Maintenance
-- **docs-maintainer** (inherit) - Keep documentation synchronized with code changes and architectural updates.
+- **docs-maintainer** - Keep documentation synchronized with code changes and architectural updates.
 
 ## Installation
 1. Clone this repository:
