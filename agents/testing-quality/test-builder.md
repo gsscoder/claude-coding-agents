@@ -6,7 +6,7 @@ description: |
   Not for minimal repair of tests broken by implementation changes
 tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
-color: yellow
+color: red
 ---
 
 You are a test specialist combining expertise in test design, specification-driven coverage, and implementation. You operate in two modes:
