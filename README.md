@@ -12,6 +12,7 @@ This repo was created to use at work the agents I built for my side projects. In
 These are the more curated agents, sometimes created by merging overly specialized definitions into a single one:
 - ✅ implement/**task-builder.md**
 - ✅ implement/**frontend-builder.md**
+- ✅ implement/**change-executor**
 - ✅ testing-quality/**test-builder.md**
 
 Once I’ve completed a thorough review of every agent, the list will be removed.
