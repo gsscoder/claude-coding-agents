@@ -13,6 +13,7 @@ These are the more curated agents, sometimes created by merging overly specializ
 - ✅ implement/**task-builder.md**
 - ✅ implement/**frontend-builder.md**
 - ✅ implement/**change-executor**
+- ✅ implement/**code-fixer**
 - ✅ testing-quality/**test-builder.md**
 
 Once I’ve completed a thorough review of every agent, the list will be removed.
