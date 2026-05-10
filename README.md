@@ -15,6 +15,7 @@ These are the more curated agents, sometimes created by merging overly specializ
 - ✅ implement/**change-executor**
 - ✅ implement/**code-fixer**
 - ✅ testing-quality/**test-builder.md**
+- ✅ testing-quality/**test-fixer**
 
 Once I’ve completed a thorough review of every agent, the list will be removed.
 
