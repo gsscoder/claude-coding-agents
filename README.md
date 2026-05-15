@@ -63,29 +63,35 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **docs-maintainer** - Keep documentation synchronized with code changes and architectural updates.
 
 ## Installation
-1. Clone this repository:
+1. Install [scopy](https://github.com/gsscoder/super-copy):
 ```bash
-git clone https://github.com/gsscoder/claude-coding-agents.git
+npm install -g @koder0x/scopy@next
 ```
 
-2. Copy the agent files you want to use into your Claude Code agents directory.
-
-**Project-level** (available only within a specific project):
+2. Register this repo as a source:
 ```bash
-# Linux/macOS
-cp ./agents/implement/* /path/to/your/project/.claude/agents/
-
-# Windows
-xcopy /e /i .\agents\implement\* C:\path\to\your\project\.claude\agents\
+scopy source add cc-agents https://github.com/gsscoder/claude-coding-agents
 ```
 
-**User-level** (available across all projects):
+3. Register your destination:
 ```bash
-# Linux/macOS
-cp ./agents/implement/* ~/.claude/agents/
+# Project-level
+scopy dest add my-project /path/to/your/project/.claude/agents
 
-# Windows
-xcopy /e /i .\agents\implement\* $home\.claude\agents\
+# User-level
+scopy dest add user-agents ~/.claude/agents
+```
+
+4. Sync the agents you want:
+```bash
+# All implement agents
+scopy sync cc-agents/agents/implement my-project --force
+
+# All testing & quality agents
+scopy sync cc-agents/agents/testing-quality my-project --force
+
+# Specific agent
+scopy sync cc-agents/agents/planning-arch/task-completer.md my-project --force
 ```
 
 ## Usage
