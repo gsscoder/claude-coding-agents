@@ -16,6 +16,7 @@ These are the more curated agents, sometimes created by merging overly specializ
 - ✅ implement/**code-fixer**
 - ✅ testing-quality/**test-builder.md**
 - ✅ testing-quality/**test-fixer**
+- ✅ analysis/**forensics-analyst**
 
 Once I’ve completed a thorough review of every agent, the list will be removed.
 
@@ -38,7 +39,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 ### Code Navigation & Analysis
 - **code-explorer** - Intelligently locate and read files by path or role description using LSP for semantic navigation; extract specific code sections with surgical precision.
 - **code-analyst** - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications.
-- **forensics-analyst** - Reverse-engineer unfamiliar codebases and understand the structure, behavior, and intent of code you didn't write; analyze only provided files without autonomous exploration.
+- **forensics-analyst** - Reverse-engineer explicitly provided files to trace data flow, decipher legacy logic, analyze schema evolution, and explain unfamiliar inherited code; no broad codebase scanning or modification.
 
 ### Planning & Architecture
 - **solution-architect** - Evaluate different implementation approaches and recommend optimal solutions for technical problems.
