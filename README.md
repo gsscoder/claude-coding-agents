@@ -1,8 +1,8 @@
 # Coding Agents
-A collection of specialized agents for [Claude Code](https://claude.com/claude-code), designed to enhance AI-assisted development workflow with focused, expert capabilities.
+A collection of specialized subagents for [Claude Code](https://claude.com/claude-code), designed to enhance AI-assisted development workflow with focused, expert capabilities.
 
-## What are Custom Agents?
-Custom agents are specialized AI assistants in Claude Code that focus on specific tasks. Each agent is optimized with:
+## What are Custom Subagents?
+Custom subagents are specialized AI assistants in Claude Code that focus on specific tasks. Each subagent is optimized with:
 - Tailored instructions for their domain
 - Specific tool permissions
 - Clear operational guidelines
@@ -31,13 +31,12 @@ This is why agent definitions need refinement:
 Subagents run in isolated contexts, but their **metadata is loaded** into the parent context **at startup**, like other tools, adding some upfront token overhead at scale. For this reason, only include the subagents you actually need to avoid unnecessary context bloat.
 It is preferable to **install them at the project level** to maintain tighter control over the context.
 
-## Available Agents
+## Available Subagents
 **Common features**:
 - Memory is disabled
 - Model is set to `inherit`
 
 ### Code Navigation & Analysis
-- **code-explorer** - Intelligently locate and read files by path or role description using LSP for semantic navigation; extract specific code sections with surgical precision.
 - **code-analyst** - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications.
 - **forensics-analyst** - Reverse-engineer explicitly provided files to trace data flow, decipher legacy logic, analyze schema evolution, and explain unfamiliar inherited code; no broad codebase scanning or modification.
 
@@ -96,10 +95,10 @@ scopy sync cc-agents/agents/planning-arch/task-completer.md my-project --force
 ```
 
 ## Usage
-Even if agents may be automatically invoked by Claude Code based on your request and the task context, it is better to explicitly specify the agent in the prompt:
+Even if subagents may be automatically invoked by Claude Code based on your request and the task context, it is better to explicitly specify the subagent in the prompt:
 ```
-"Use the code-explorer agent to find all authentication files"
-"I need the feature-builder agent to implement this spec"
+"Use the forensics-analyst subagent to reverse-engineer this module"
+"I need the task-builder subagent to implement this spec"
 ```
 
 ## Notes
