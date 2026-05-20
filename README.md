@@ -101,8 +101,8 @@ Even if subagents may be automatically invoked by Claude Code based on your requ
 "I need the task-builder subagent to implement this spec"
 ```
 
-## Notes
-The `agent-descriptions/` directory contains text descriptions for each agent that are used to recreate the actual agent definitions. These descriptions can be used by Claude Code or other coding agentic tools to generate or update agent configurations programmatically.
+## Porting to Other Tools
+Agent definitions in `agents/` are self-contained Markdown files. To recreate them in another AI-assisted development tool, either feed the `description` field from the frontmatter as a prompt to generate a new definition, or manually port the full agent body adapting structure and syntax to the target tool's specification.
 
 ## License
 MIT License - feel free to use and modify these agents for your projects.
