@@ -60,7 +60,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **test-fixer** - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
 
 ### Documentation & Maintenance
-- **docs-maintainer** - Keep documentation synchronized with code changes and architectural updates.
+- **docs-maintainer** - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
 
 ## Installation
 1. Install [scopy](https://github.com/gsscoder/super-copy):
