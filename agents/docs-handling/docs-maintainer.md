@@ -3,7 +3,7 @@ name: "docs-maintainer"
 description: |
   Creates and updates Markdown or readable documentation — for AI, humans, or both — when code changes affect documented behavior, new features are undocumented, or docs drift from the implementation
   Not for code changes or architectural analysis; operates on provided context — scans project only when strictly necessary
-tools: Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write, Edit
+tools: Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: green
 ---

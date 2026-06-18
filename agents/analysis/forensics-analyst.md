@@ -4,7 +4,7 @@ description: |
   Reverse-engineers explicitly provided files: traces data flow, deciphers legacy logic,
   analyzes schema evolution, and explains unfamiliar inherited code
   Not for broad codebase scanning or any modification
-tools: Bash, Glob, Grep, Read, Skill, TaskGet, TaskList, TaskUpdate, ToolSearch, TaskCreate
+tools: Bash, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch
 model: inherit
 color: orange
 ---

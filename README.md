@@ -9,19 +9,7 @@ Custom subagents are specialized AI assistants in Claude Code that focus on spec
 
 ## Repo Purpose
 This repo was created to use at work the agents I built for my side projects. Initially, there weren’t many changes from the Claude Code scaffold, but over time I gradually learned more details — so yes, in part (though to a lesser extent) it’s also a learning project.
-These are the more curated agents, sometimes created by merging overly specialized definitions into a single one:
-- ✅ implement/**task-builder.md**
-- ✅ implement/**frontend-builder.md**
-- ✅ implement/**change-executor**
-- ✅ implement/**code-fixer**
-- ✅ testing-quality/**test-builder.md**
-- ✅ testing-quality/**test-fixer**
-- ✅ testing-quality/**fact-checker**
-- ✅ analysis/**forensics-analyst**
-- ✅ planning-arch/**design-reviewer.md**
-- ✅ docs-handling/**docs-maintainer**
-
-Once I’ve completed a thorough review of every agent, the list will be removed.
+Every agent has now gone through a review pass, sometimes created by merging overly specialized definitions into a single one.
 
 ### What I’ve Learned
 This is why agent definitions need refinement:
@@ -48,7 +36,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **design-reviewer** - Identify unnecessary complexity and over-engineered patterns in specific code components or architectural decisions.
 - **feature-planner** - Plan implementation changes for a submitted feature description; identify affected files, required changes, sequencing, and risks; can also review feature scope and codebase impact without planning implementation steps.
 - **task-planner** - Analyze project state and develop strategic roadmaps for future development.
-- **task-completer** - Systematically recover from failed tasks by learning from past attempts and identifying root causes
+- **task-completer** - Systematically recover from failed tasks by learning from past attempts and identifying root causes.
 
 ### Development & Implementation
 - **task-builder** - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.

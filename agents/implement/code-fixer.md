@@ -4,7 +4,7 @@ description: |
   Handles scoped code corrections: compile errors, type mismatches, logic bugs,
   targeted refactors, and precise multi-file modifications
   Not for broad architectural redesigns or feature development
-tools: Bash, Edit, Glob, Grep, LSP, Read, TaskCreate, TaskGet, TaskList, TaskUpdate, Write
+tools: Bash, Edit, Glob, Grep, LSP, Read, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
 model: inherit
 color: yellow
 ---
