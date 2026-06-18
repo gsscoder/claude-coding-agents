@@ -16,6 +16,7 @@ These are the more curated agents, sometimes created by merging overly specializ
 - ✅ implement/**code-fixer**
 - ✅ testing-quality/**test-builder.md**
 - ✅ testing-quality/**test-fixer**
+- ✅ testing-quality/**fact-checker**
 - ✅ analysis/**forensics-analyst**
 - ✅ planning-arch/**design-reviewer.md**
 - ✅ docs-handling/**docs-maintainer**
@@ -60,6 +61,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 ### Testing & Quality
 - **test-builder** - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
 - **test-fixer** - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
+- **fact-checker** - Compare exactly two inputs — assertions, documentation, code, or test output — for semantic, structural, or behavioral consistency; declines anything other than a single pair.
 
 ### Documentation & Maintenance
 - **docs-maintainer** - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
