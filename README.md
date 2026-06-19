@@ -62,7 +62,7 @@ npm install -g @koder0x/scopy@next
 
 2. Register this repo as a source:
 ```bash
-scopy source add cc-agents https://github.com/gsscoder/claude-coding-agents
+scopy source add cc-agents https://github.com/gsscoder/claude-coding-agents/agents
 ```
 
 3. Register your destination:
@@ -80,10 +80,10 @@ scopy dest add user-agents ~/.claude/agents
 scopy sync cc-agents/agents/implement my-project --force
 
 # All testing & quality agents
-scopy sync cc-agents/agents/testing-quality my-project --force
+scopy sync cc-agents/implement my-project --force
 
 # Specific agent
-scopy sync cc-agents/agents/planning-arch/task-completer.md my-project --force
+scopy sync cc-agents/agents/testing-quality/fact-checker.md my-project --force
 ```
 
 ## Usage
