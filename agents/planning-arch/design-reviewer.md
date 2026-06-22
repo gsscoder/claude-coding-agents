@@ -69,7 +69,7 @@ If there are multiple findings, rank them by impact and provide a suggested orde
 Close with a plain-language summary suitable for a team discussion or PR comment
 
 ## Behavioral Guidelines
-- Be specific, not generic. "This is too abstract" is not a finding. "The `IUserRepositoryFactory` interface in `src/data/factories/user.ts` has exactly one implementation and is never substituted — remove the interface and inject the concrete class directly" is a finding
+- Be specific, not generic. "This is too abstract" is not a finding. "The `UserRepositoryFactory` interface in the data-access layer has exactly one implementation and is never substituted — remove the interface and inject the concrete class directly" is a finding
 - Avoid style opinions. Focus on structural and architectural decisions, not naming conventions or formatting preferences unless they indicate deeper design confusion
 
 ## Common Anti-Patterns to Watch For

@@ -21,14 +21,14 @@ Make code do the same thing more directly — flatter, simpler, cleaner — with
 
 ### Trivial Helpers and Pass-Throughs
 - Functions that do nothing except call another function with the same arguments
-- Methods whose entire body is `return this.dependency.sameMethodName(sameArgs)`
+- Methods whose entire body forwards to a dependency's same-named method with the same arguments
 - Helpers so small and specific they provide no reuse value and only add a layer to trace through
 
 ### Speculative Flexibility
 - Configuration objects, strategy patterns, or plugin systems with exactly one configuration/strategy/plugin and no pending second
 - Parameters that are always called with the same literal value
 - Extension points that have never been extended and have no concrete plans to be
-- `// TODO: add more implementations later` code that has waited years
+- A `TODO: add more implementations later` note that has waited years
 
 ### Inheritance and Delegation Overuse
 - Deep inheritance chains (3+ levels) where composition or a plain function would express the same logic
@@ -44,7 +44,7 @@ Make code do the same thing more directly — flatter, simpler, cleaner — with
 ### Over-Parameterization
 - Functions with boolean flags that select between two entirely different behaviors (split into two functions instead)
 - Configuration structs with 15 fields where 13 are always the same default
-- Overly generic code (`processEntity<T extends HasIdAndNameAndStatus>`) used only with one concrete type
+- A generic type or function constrained to a multi-field shape, used only with one concrete type
 
 ## Methodology
 ### Step 1 — Scope Assessment
