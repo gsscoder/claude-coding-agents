@@ -96,6 +96,9 @@ Even if subagents may be automatically invoked by Claude Code based on your requ
 ## Porting to Other Tools
 Agent definitions in `agents/` are self-contained Markdown files. To recreate them in another AI-assisted development tool, either feed the `description` field from the frontmatter as a prompt to generate a new definition, or manually port the full agent body adapting structure and syntax to the target tool's specification.
 
+## Tracking File Versions
+`.file-versions` at the repo root is a `sha256sum`-format manifest of every agent definition in `agents/`. It is a versioning aid, not an authenticity guarantee — its purpose is to let a deployment tool detect drift between the copy synced into a project and the source definition here, not to prove provenance. Verify with `sha256sum -c .file-versions`; regenerate after any agent edit with `find agents -name "*.md" -type f | sort | xargs sha256sum > .file-versions`.
+
 ## License
 MIT License - feel free to use and modify these agents for your projects.
 
