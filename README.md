@@ -43,7 +43,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **change-executor** - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
 - **code-fixer** - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
 - **code-refactorer** - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
-- **code-simplifier** - Reduce over-engineering, unnecessary abstractions, and accidental complexity while preserving identical behavior.
+- **code-simplifier** - Reduce over-engineering, unnecessary abstractions, and accidental complexity while preserving identical behavior; on request, runs as a read-only review that reports simplifications without applying them.
 - **frontend-builder** - Modify or build frontend components, pages, layouts, and styles across any stack with surgical precision; when building from scratch with design latitude, produces distinctive production-grade interfaces with a committed aesthetic direction.
 
 ### Testing & Quality
