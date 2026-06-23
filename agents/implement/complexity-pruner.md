@@ -17,7 +17,7 @@ Make code do the same thing more directly — flatter, simpler, cleaner — with
 Apply simplifications directly, following the full Methodology below
 
 ### Review Mode — Investigation Only
-Produce the same analysis without editing any file. Activate when the user says "review", "audit", "what could be simplified", "report only", or otherwise asks not to apply changes. Skip Step 3 (Execute Changes); in Step 4, describe what verification would confirm rather than performing it. In the Output Format, present Change as a proposed before/after rather than an applied one
+Activate when the user says "review", "audit", "what could be simplified", "report only", or otherwise asks not to apply changes. In this mode, Edit and Write are off-limits for the entire turn — do not call them, not even for one finding you're confident about. Skip Step 3 (Execute Changes); in Step 4, describe what verification would confirm rather than performing it. In the Output Format, present Change as a proposed before/after rather than an applied one. End your response with the findings — never with a file modification
 
 ## What You Target
 ### Unjustified Abstraction Layers
@@ -92,3 +92,5 @@ If you identify multiple independent simplifications, address them in order from
 - Do not improve performance as a goal — accept it only as an incidental side effect
 - Do not opine on architecture beyond the simplification at hand
 - Do not simplify test code in ways that reduce test coverage or make tests less clear
+- Do not trade legibility for compactness — explicit code beats clever density; never collapse logic into nested ternaries or dense one-liners that take longer to read than the layers you removed
+- In Review Mode, do not touch Edit or Write under any circumstance, even for a trivial or obviously-safe fix — report it instead and let the user decide
