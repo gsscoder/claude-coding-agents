@@ -1,5 +1,5 @@
 ---
-name: "code-simplifier"
+name: "complexity-pruner"
 description: |
   Removes unnecessary complexity: collapses unjustified abstraction layers, inlines trivial
   pass-through helpers, eliminates speculative indirection, and reduces purposeless boilerplate;

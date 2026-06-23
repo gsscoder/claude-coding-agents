@@ -22,3 +22,8 @@ Definitions live in `agents/<category>/`. Parallel text descriptions for program
 ## What to check before editing
 - `README.md` has the full agent catalog with descriptions; keep it in sync after adding/removing agents
 - `agent-descriptions/` mirrors `agents/` structure; update both when changing an agent
+
+## Versioning
+On agent definition update:
+- Regenerate `.file-versions`: `find agents -name "*.md" -type f | sort | xargs sha256sum > .file-versions`
+- In `README.md`, bump the agent's version per the extent of the change, and sync the parenthesized hash next to it with the first 8 chars of the new hash

@@ -28,31 +28,31 @@ It is preferable to **install them at the project level** to maintain tighter co
 - Model is set to `inherit`
 
 ### Code Navigation & Analysis
-- **code-analyst** - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications.
-- **forensics-analyst** - Reverse-engineer explicitly provided files to trace data flow, decipher legacy logic, analyze schema evolution, and explain unfamiliar inherited code; no broad codebase scanning or modification.
+- **code-analyst v2.0** (5e1e102c) - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications.
+- **forensics-analyst v2.0** (b3844726) - Reverse-engineer explicitly provided files to trace data flow, decipher legacy logic, analyze schema evolution, and explain unfamiliar inherited code; no broad codebase scanning or modification.
 
 ### Planning & Architecture
-- **solution-architect** - Evaluate different implementation approaches and recommend optimal solutions for technical problems.
-- **design-reviewer** - Identify unnecessary complexity and over-engineered patterns in specific code components or architectural decisions.
-- **feature-planner** - Plan implementation changes for a submitted feature description; identify affected files, required changes, sequencing, and risks; can also review feature scope and codebase impact without planning implementation steps.
-- **task-planner** - Analyze project state and develop strategic roadmaps for future development.
-- **task-completer** - Systematically recover from failed tasks by learning from past attempts and identifying root causes.
+- **solution-architect v2.0** (60d2e1d9) - Evaluate different implementation approaches and recommend optimal solutions for technical problems.
+- **design-reviewer v2.0** (4baadbf8) - Identify unnecessary complexity and over-engineered patterns in specific code components or architectural decisions.
+- **feature-planner v2.0** (edd5bb09) - Plan implementation changes for a submitted feature description; identify affected files, required changes, sequencing, and risks; can also review feature scope and codebase impact without planning implementation steps.
+- **task-planner v2.0** (59c7aec6) - Analyze project state and develop strategic roadmaps for future development.
+- **task-completer v2.0** (8e9a35f0) - Systematically recover from failed tasks by learning from past attempts and identifying root causes.
 
 ### Development & Implementation
-- **task-builder** - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.
-- **change-executor** - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
-- **code-fixer** - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
-- **code-refactorer** - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
-- **code-simplifier** - Reduce over-engineering, unnecessary abstractions, and accidental complexity while preserving identical behavior; on request, runs as a read-only review that reports simplifications without applying them.
-- **frontend-builder** - Modify or build frontend components, pages, layouts, and styles across any stack with surgical precision; when building from scratch with design latitude, produces distinctive production-grade interfaces with a committed aesthetic direction.
+- **task-builder v2.0** (038423f2) - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.
+- **change-executor v2.0** (57c5c385) - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
+- **code-fixer v2.0** (5f54a299) - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
+- **code-refactorer v2.0** (18e87435) - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
+- **complexity-pruner v2.0** (6eaf4f9c) - Reduce over-engineering, unnecessary abstractions, and accidental complexity while preserving identical behavior; on request, runs as a read-only review that reports simplifications without applying them.
+- **frontend-builder v2.0** (168cd34f) - Modify or build frontend components, pages, layouts, and styles across any stack with surgical precision; when building from scratch with design latitude, produces distinctive production-grade interfaces with a committed aesthetic direction.
 
 ### Testing & Quality
-- **test-builder** - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
-- **test-fixer** - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
-- **fact-checker** - Compare exactly two inputs — assertions, documentation, code, or test output — for semantic, structural, or behavioral consistency; declines anything other than a single pair.
+- **test-builder v2.0** (ea8000ed) - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
+- **test-fixer v2.0** (3457d412) - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
+- **fact-checker v2.0** (61ee9fdd) - Compare exactly two inputs — assertions, documentation, code, or test output — for semantic, structural, or behavioral consistency; declines anything other than a single pair.
 
 ### Documentation & Maintenance
-- **docs-maintainer** - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
+- **docs-maintainer v.20** (7653dedd) - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
 
 ## Installation
 1. Install [scopy](https://github.com/gsscoder/super-copy):
