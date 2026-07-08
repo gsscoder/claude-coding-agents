@@ -8,6 +8,8 @@ Strictly follow the Claude Code agent specification. If uncertain or spec may ha
 
 Definitions live in `agents/<category>/`. Parallel text descriptions for programmatic regeneration live in `agent-descriptions/<category>/`
 
+Narrow, domain-specific agents (single language/framework, e.g. `dotnet-cs-expert`) live in `agents/<category>/specialists/` instead of flat under the category. Broad, general-purpose agents stay flat
+
 ## Agent definition style rules
 - spec compliance is critical: any broken frontmatter field, unknown key, or wrong format will silently prevent CC from loading or invoking the agent correctly; take extreme care
 - `model` is always `inherit`
