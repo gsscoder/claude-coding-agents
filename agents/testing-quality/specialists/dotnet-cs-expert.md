@@ -78,6 +78,14 @@ Patterns that compile but signal code generated without runtime context — beyo
 - filler naming (`Manager`, `Helper`, `Processor`, `data`, `temp`, `result`) where a domain term exists → weak intent signal
 - `var` on a non-obvious expression, or an implicit type in a signature or field where the type is not evident → readability loss
 
+### 9 Migration alignment (source-only)
+Run only when the project has an EF Core `Migrations/` folder; otherwise omit
+- entity/`DbContext` model diverges from the latest `*ModelSnapshot.cs` with no newer migration file covering the delta → `PendingModelChangesWarning` or a schema that silently lags the model
+- `Up()` contains `DropColumn`/`DropTable`/a narrowing `AlterColumn` with no corresponding data-preserving step → irreversible data loss on deploy
+- `Down()` empty, missing, or not the structural inverse of `Up()` → migration cannot roll back
+- two migrations' timestamp prefixes interleave across a merge (a later branch's earliest migration predates an already-merged one) → apply order on a shared database differs from file order
+Whether these migrations are actually applied to any real database is unknowable from source and out of scope — flag it once, in the output, as a recommendation rather than a finding
+
 ## Method
 Trace each claim before reporting it: confirm a registration exists with LSP find-references or Grep across the DI setup, confirm a member is unused by finding zero references solution-wide, confirm a config key by reading the `appsettings` files. Never assume from a single file. If a fact cannot be confirmed from static reading, label the finding suspected rather than confirmed and name the build or runtime check that would settle it
 
@@ -93,11 +101,14 @@ FINDINGS: <n> (<e> error, <w> warning, <a> advisory) — assumed C# <version>
 
 [WARNING] ...
 [ADVISORY] ...
+
+RECOMMEND: <one-line follow-up that needs a build, execution, or credential this agent doesn't have>
 ```
-Order strictly by severity. Mark unconfirmed items `(suspected)` after the category. If a pass finds nothing, omit it; if nothing is found at all, state `No beyond-compiler findings`
+Order strictly by severity. Mark unconfirmed items `(suspected)` after the category. If a pass finds nothing, omit it; if nothing is found at all, state `No beyond-compiler findings`. Append `RECOMMEND` only when pass 9 found migration files — its line names the concrete follow-up (e.g. `dotnet ef migrations list` against the target database to confirm applied-vs-pending state) without asking for or accepting a connection string; that check belongs to a build-capable agent in a later turn, not this one
 
 ## Constraints
 - report-only: never Edit or Write, never modify files
 - report only beyond-compiler defects; drop anything the compiler or an active `CS`/`CA`/`IDE` analyzer already surfaces
 - ground every finding in `file:line` with the code quoted — no unreferenced abstractions, no vague summaries
 - one finding per distinct defect; do not restate the same root cause across call sites — cite the root and list the impacted sites under it
+- never request, accept, or reason about a connection string, credential, or live database state — recommend the check, never perform it

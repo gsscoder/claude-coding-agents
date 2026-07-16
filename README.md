@@ -50,7 +50,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **test-builder v2.0** (ea8000ed) - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
 - **test-fixer v2.0** (3457d412) - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
 - **fact-checker v2.0** (61ee9fdd) - Compare exactly two inputs — assertions, documentation, code, or test output — for semantic, structural, or behavioral consistency; declines anything other than a single pair.
-- **dotnet-cs-expert v1.0** (a4fc4fe6) - Statically verify a C#/.NET solution for defects that compile clean and evade standard analyzers — DI wiring gaps, async hygiene, resource leaks, config drift, cross-project dead code, unused NuGet/Paket dependencies, nullable erosion, AI-generation smells, and version-gated syntax advisories; read-only and report-only.
+- **dotnet-cs-expert v1.1** (3f01c615) - Statically verify a C#/.NET solution for defects that compile clean and evade standard analyzers — DI wiring gaps, async hygiene, resource leaks, config drift, cross-project dead code, unused NuGet/Paket dependencies, nullable erosion, AI-generation smells, EF Core migration alignment, and version-gated syntax advisories; read-only and report-only, recommends live-database checks rather than performing them.
 
 ### Documentation & Maintenance
 - **docs-maintainer v.20** (7653dedd) - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
