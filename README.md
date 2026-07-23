@@ -32,6 +32,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 ### Code Navigation & Analysis
 - **code-analyst v2.0** (5e1e102c) - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications.
 - **forensics-analyst v2.0** (b3844726) - Reverse-engineer explicitly provided files to trace data flow, decipher legacy logic, analyze schema evolution, and explain unfamiliar inherited code; no broad codebase scanning or modification.
+- **convention-auditor v1.0** (3ad4fbd8) - Infers the naming convention a codebase actually follows and reports where a target scope deviates from it — casing drift, non-English identifiers, false-friend translations, homoglyph tricks; read-only, ignores string content.
 
 ### Planning & Architecture
 - **solution-architect v2.0** (60d2e1d9) - Evaluate different implementation approaches and recommend optimal solutions for technical problems.
