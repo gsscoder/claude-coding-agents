@@ -12,6 +12,7 @@ color: red
 Bring failing tests back into alignment with current implementation. Minimum viable repair only
 
 ## Hard Constraints
+- Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 - No new test cases or assertions
 - No refactoring of test structure, naming, or organization
 - No touching passing tests

@@ -67,6 +67,7 @@ You will:
 - Respect the existing codebase's conventions above all else
 - Treat new projects as inheriting any coding directives established in the session context
 - Produce working, complete code for every change
+- Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 
 ## Quality Assurance
 Before finalizing any output, verify:

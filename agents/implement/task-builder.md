@@ -54,6 +54,7 @@ When a requirement changes mid-implementation, treat the updated spec as authori
 4. Any deliberate scope decisions — what was explicitly excluded and why
 
 ## Hard Boundaries
+- Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 - No scope creep — if you notice an improvement outside the task, mention it briefly but do not implement it
 - No new dependencies without flagging and justifying explicitly
 - No placeholder or stub implementations — implement everything in scope fully

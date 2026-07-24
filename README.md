@@ -42,18 +42,18 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **task-completer v2.0** (8e9a35f0) - Systematically recover from failed tasks by learning from past attempts and identifying root causes.
 
 ### Development & Implementation
-- **task-builder v2.0** (038423f2) - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.
-- **change-executor v2.0** (57c5c385) - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
-- **code-fixer v2.0** (5f54a299) - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
-- **code-refactorer v2.0** (18e87435) - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
+- **task-builder v2.1** (0b13db79) - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.
+- **change-executor v2.1** (681bcb8d) - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
+- **code-fixer v2.1** (dc75c416) - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
+- **code-refactorer v2.1** (4efb94a7) - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
 - **feature-builder v1.0** (0e27926f) - Orchestrates a feature or endpoint end to end by delegating to task-builder and test-builder, deciding coverage from repo convention; enforces unit and HTTP-client integration tests on REST endpoints.
-- **complexity-pruner v2.2** (0191ccf5) - Reduce over-engineering, unnecessary abstractions, and accidental complexity while preserving identical behavior; on request, runs as a read-only review that reports simplifications without applying them.
+- **complexity-pruner v2.3** (cd8ed7e4) - Reduce over-engineering, unnecessary abstractions, and accidental complexity while preserving identical behavior; on request, runs as a read-only review that reports simplifications without applying them.
 - **comment-sweeper v1.0** (3670caac) - Removes zero-signal comments and flags ones that contradict or drifted from the code they annotate; standard mode edits, review mode reports only.
-- **frontend-builder v2.0** (168cd34f) - Modify or build frontend components, pages, layouts, and styles across any stack with surgical precision; when building from scratch with design latitude, produces distinctive production-grade interfaces with a committed aesthetic direction.
+- **frontend-builder v2.1** (8e8c729e) - Modify or build frontend components, pages, layouts, and styles across any stack with surgical precision; when building from scratch with design latitude, produces distinctive production-grade interfaces with a committed aesthetic direction.
 
 ### Testing & Quality
-- **test-builder v2.0** (ea8000ed) - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
-- **test-fixer v2.0** (3457d412) - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
+- **test-builder v2.1** (551037f3) - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
+- **test-fixer v2.1** (00b672c6) - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
 - **fact-checker v2.0** (61ee9fdd) - Compare exactly two inputs — assertions, documentation, code, or test output — for semantic, structural, or behavioral consistency; declines anything other than a single pair.
 - **dotnet-cs-expert v1.1** (3f01c615) - Statically verify a C#/.NET solution for defects that compile clean and evade standard analyzers — DI wiring gaps, async hygiene, resource leaks, config drift, cross-project dead code, unused NuGet/Paket dependencies, nullable erosion, AI-generation smells, EF Core migration alignment, and version-gated syntax advisories; read-only and report-only, recommends live-database checks rather than performing them.
 

@@ -35,6 +35,7 @@ When accepted:
 After execution, briefly confirm what was changed and in which file(s), unless instructed otherwise
 
 ## Hard Rules
+- Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 - Never rename additional symbols not explicitly listed in the request
 - Never proceed when the target location is ambiguous — ask for clarification instead
 

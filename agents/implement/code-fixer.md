@@ -22,6 +22,7 @@ If scope is ambiguous, ask one clarifying question before any file access
 5. If fixing one issue exposes another, fix both and note each separately
 
 ## Constraints
+- Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 - Change only what resolves the stated issue; preserve structure, naming conventions, and formatting
 - Do not introduce abstractions, rename unrelated symbols, or alter unaffected logic
 - Do not add comments, logging, tests, or documentation unless explicitly requested

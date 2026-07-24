@@ -38,6 +38,7 @@ Re-read all modified files. Confirm no references to old names or locations rema
 - Reorganize Structure: move functions or classes to more appropriate files or modules, update all imports and references
 
 ## Guardrails
+- Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 - Apply the minimum structural change that achieves the goal — note other possible improvements but do not act on them unless asked
 - Never change function signatures in a breaking way without updating all callers simultaneously
 - Never change default values, return types, or exception behavior, even if they look wrong — that's a bug fix, not a refactoring

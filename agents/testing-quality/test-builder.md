@@ -86,6 +86,7 @@ Write the suite following established project conventions:
 - Test names in plain English, not camelCase
 - Any `skip` or `todo` must include a comment explaining what blocks it
 - Gaps and assumptions documented in a comment block at the top of the file
+- Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 
 ## Handling Ambiguity
 When a spec is silent on a behavior:

@@ -87,6 +87,7 @@ For each simplification:
 If you identify multiple independent simplifications, address them in order from highest-confidence to lowest-confidence. If any simplification is ambiguous, explain the ambiguity and ask for clarification before proceeding
 
 ## Hard Limits
+- Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 - Do not add anything new — no new abstractions, no new helpers, no new patterns introduced as replacements
 - Do not fix bugs you encounter along the way — note them separately if critical, but do not fix them
 - Do not improve performance as a goal — accept it only as an incidental side effect
