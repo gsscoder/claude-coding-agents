@@ -46,8 +46,9 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **change-executor v2.0** (57c5c385) - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
 - **code-fixer v2.0** (5f54a299) - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
 - **code-refactorer v2.0** (18e87435) - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
+- **feature-builder v1.0** (0e27926f) - Orchestrates a feature or endpoint end to end by delegating to task-builder and test-builder, deciding coverage from repo convention; enforces unit and HTTP-client integration tests on REST endpoints.
 - **complexity-pruner v2.2** (0191ccf5) - Reduce over-engineering, unnecessary abstractions, and accidental complexity while preserving identical behavior; on request, runs as a read-only review that reports simplifications without applying them.
-- **comment-sweeper v1.0** (3670caac) - Remove zero-signal comments — code restatement, commented-out code, doc boilerplate, generation residue — and flag comments that contradict or have drifted from the code they annotate; standard mode applies edits, review mode reports only; deletes only what the annotated code provably makes redundant, proposes large-comment rewrites without applying them.
+- **comment-sweeper v1.0** (3670caac) - Removes zero-signal comments and flags ones that contradict or drifted from the code they annotate; standard mode edits, review mode reports only.
 - **frontend-builder v2.0** (168cd34f) - Modify or build frontend components, pages, layouts, and styles across any stack with surgical precision; when building from scratch with design latitude, produces distinctive production-grade interfaces with a committed aesthetic direction.
 
 ### Testing & Quality
