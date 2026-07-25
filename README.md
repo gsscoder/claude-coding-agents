@@ -58,7 +58,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **dotnet-cs-expert v1.1** (3f01c615) - Statically verify a C#/.NET solution for defects that compile clean and evade standard analyzers — DI wiring gaps, async hygiene, resource leaks, config drift, cross-project dead code, unused NuGet/Paket dependencies, nullable erosion, AI-generation smells, EF Core migration alignment, and version-gated syntax advisories; read-only and report-only, recommends live-database checks rather than performing them.
 
 ### Documentation & Maintenance
-- **docs-maintainer v.20** (7653dedd) - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
+- **docs-maintainer v.21** (75d36d92) - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
 
 ## Installation
 1. Install [scopy](https://github.com/gsscoder/super-copy):
