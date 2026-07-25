@@ -49,7 +49,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **feature-builder v1.0** (0e27926f) - Orchestrates a feature or endpoint end to end by delegating to task-builder and test-builder, deciding coverage from repo convention; enforces unit and HTTP-client integration tests on REST endpoints.
 - **complexity-pruner v2.3** (cd8ed7e4) - Reduce over-engineering, unnecessary abstractions, and accidental complexity while preserving identical behavior; on request, runs as a read-only review that reports simplifications without applying them.
 - **comment-sweeper v1.0** (3670caac) - Removes zero-signal comments and flags ones that contradict or drifted from the code they annotate; standard mode edits, review mode reports only.
-- **frontend-builder v2.1** (8e8c729e) - Modify or build frontend components, pages, layouts, and styles across any stack with surgical precision; when building from scratch with design latitude, produces distinctive production-grade interfaces with a committed aesthetic direction.
+- **frontend-builder v3.0** (74392689) - Modify or build frontend components, pages, layouts, styles, and interface copy across any stack with surgical precision; operates in an explicit match or design mode, and when building from scratch grounds a distinctive aesthetic direction in the subject, critiques it against known defaults, and holds a responsive/keyboard/reduced-motion quality floor.
 
 ### Testing & Quality
 - **test-builder v2.1** (551037f3) - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
