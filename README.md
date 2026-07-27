@@ -33,6 +33,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **code-analyst v2.0** (5e1e102c) - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications.
 - **forensics-analyst v2.0** (b3844726) - Reverse-engineer explicitly provided files to trace data flow, decipher legacy logic, analyze schema evolution, and explain unfamiliar inherited code; no broad codebase scanning or modification.
 - **convention-auditor v1.0** (3ad4fbd8) - Infers the naming convention a codebase actually follows and reports where a target scope deviates from it — casing drift, non-English identifiers, false-friend translations, homoglyph tricks; read-only, ignores string content.
+- **rest-auditor v1.0** (7c43b39e) - Scans a REST endpoint set (all, or a natural-language scope like changed files or the last commit) framework-agnostically; reports anomalies against the set's own convention and per-endpoint test coverage (underlying code, HTTP-level integration); read-only.
 
 ### Planning & Architecture
 - **solution-architect v2.0** (60d2e1d9) - Evaluate different implementation approaches and recommend optimal solutions for technical problems.
