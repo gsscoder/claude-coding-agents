@@ -27,6 +27,7 @@ Narrow, domain-specific agents (single language/framework, e.g. `dotnet-cs-exper
 
 ## Skill definitions
 Skills live in `skills/<skill-name>/SKILL.md`, one directory per skill, no category grouping. Follow the Claude Code skill specification; a skill's supporting files (scripts, references) are not version-tracked, only `SKILL.md`
+No `color` field — that belongs to the agent spec, not the skill spec; do not carry it over when basing a new skill on an agent or another skill
 
 ## Versioning
 On agent or skill definition update:

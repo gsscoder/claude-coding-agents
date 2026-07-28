@@ -7,7 +7,6 @@ description: |
   Not for fixing failing builds, broken migrations, or startup errors — verification only
 allowed-tools: Bash Read Grep Glob
 model: inherit
-color: red
 disable-model-invocation: true
 context: fork
 background: false
