@@ -1,5 +1,5 @@
-# Coding Agents
-A collection of specialized subagents for [Claude Code](https://claude.com/claude-code), designed to enhance AI-assisted development workflow with focused, expert capabilities.
+# Coding Agents & Skills
+A collection of specialized subagents and skills for [Claude Code](https://claude.com/claude-code), designed to enhance AI-assisted development workflow with focused, expert capabilities.
 
 ![Screen](docs/screen.png)
 
@@ -8,6 +8,9 @@ Custom subagents are specialized AI assistants in Claude Code that focus on spec
 - Tailored instructions for their domain
 - Specific tool permissions
 - Clear operational guidelines
+
+## What are Skills?
+Skills are packaged instructions Claude Code loads into the current context for a specific procedure — a checklist, a repo-specific workflow, a verification routine — rather than a separate agent identity. No isolated context, no tool-grant frontmatter to maintain; use one when the task is procedural rather than a role requiring judgment and boundaries.
 
 ## Repo Purpose
 This repo was created to use at work the agents I built for my side projects. Initially, there weren’t many changes from the Claude Code scaffold, but over time I gradually learned more details — so yes, in part (though to a lesser extent) it’s also a learning project.
@@ -33,7 +36,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **code-analyst v2.0** (5e1e102c) - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications.
 - **forensics-analyst v2.0** (b3844726) - Reverse-engineer explicitly provided files to trace data flow, decipher legacy logic, analyze schema evolution, and explain unfamiliar inherited code; no broad codebase scanning or modification.
 - **convention-auditor v1.0** (3ad4fbd8) - Infers the naming convention a codebase actually follows and reports where a target scope deviates from it — casing drift, non-English identifiers, false-friend translations, homoglyph tricks; read-only, ignores string content.
-- **rest-auditor v1.0** (7c43b39e) - Scans a REST endpoint set (all, or a natural-language scope like changed files or the last commit) framework-agnostically; reports anomalies against the set's own convention and per-endpoint test coverage (underlying code, HTTP-level integration); read-only.
+- **rest-auditor v1.0** (874e4690) - Scans a REST endpoint set (all, or a natural-language scope like changed files or the last commit) framework-agnostically; reports anomalies against the set's own convention and per-endpoint test coverage (underlying code, HTTP-level integration); read-only.
 
 ### Planning & Architecture
 - **solution-architect v2.0** (60d2e1d9) - Evaluate different implementation approaches and recommend optimal solutions for technical problems.
@@ -61,7 +64,12 @@ It is preferable to **install them at the project level** to maintain tighter co
 ### Documentation & Maintenance
 - **docs-maintainer v.21** (75d36d92) - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
 
+## Available Skills
+- **dotnet-preflight v1.0** (cce48b25) - Verifies a .NET backend feature branch is safe to open a PR: solution builds cleanly, EF Core migrations are healthy against the local dev database, and the application starts without error; verification only, never fixes what it finds.
+
 ## Installation
+The steps below cover agents only — `scopy` is wired to sync from `agents/`. Skills have no sync tooling yet: copy the `skills/<skill-name>/` directory manually into your project's or user's `.claude/skills/`
+
 1. Install [scopy](https://github.com/gsscoder/super-copy):
 ```bash
 npm install -g @koder0x/scopy@next
@@ -104,7 +112,7 @@ Even if subagents may be automatically invoked by Claude Code based on your requ
 Agent definitions in `agents/` are self-contained Markdown files. To recreate them in another AI-assisted development tool, either feed the `description` field from the frontmatter as a prompt to generate a new definition, or manually port the full agent body adapting structure and syntax to the target tool's specification.
 
 ## Tracking File Versions
-`.file-versions` at the repo root is a `sha256sum`-format manifest of every agent definition in `agents/`. It is a versioning aid, not an authenticity guarantee — its purpose is to let a deployment tool detect drift between the copy synced into a project and the source definition here, not to prove provenance. Verify with `sha256sum -c .file-versions`.
+`.file-versions` at the repo root is a `sha256sum`-format manifest of every agent definition in `agents/` and every `SKILL.md` in `skills/` — a skill's supporting files are not individually tracked. It is a versioning aid, not an authenticity guarantee — its purpose is to let a deployment tool detect drift between the copy synced into a project and the source definition here, not to prove provenance. Verify with `sha256sum -c .file-versions`.
 
 ## License
 MIT License - feel free to use and modify these agents for your projects.

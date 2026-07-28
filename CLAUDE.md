@@ -1,7 +1,7 @@
 # AI guidance
 
 ## Repo purpose
-Collection of custom Claude Code agent definitions. Typical session: create or update agent definitions
+Collection of custom Claude Code agent and skill definitions. Typical session: create or update agent or skill definitions
 
 ## Agent definitions
 Strictly follow the Claude Code agent specification. If uncertain or spec may have changed, fetch current docs before writing any definition
@@ -25,7 +25,10 @@ Narrow, domain-specific agents (single language/framework, e.g. `dotnet-cs-exper
 - `README.md` has the full agent catalog with descriptions; keep it in sync after adding/removing agents
 - `agent-descriptions/` mirrors `agents/` structure; update both when changing an agent
 
+## Skill definitions
+Skills live in `skills/<skill-name>/SKILL.md`, one directory per skill, no category grouping. Follow the Claude Code skill specification; a skill's supporting files (scripts, references) are not version-tracked, only `SKILL.md`
+
 ## Versioning
-On agent definition update:
-- Regenerate `.file-versions`: `find agents -name "*.md" -type f | sort | xargs sha256sum > .file-versions`
-- In `README.md`, bump the agent's version per the extent of the change, and sync the parenthesized hash next to it with the first 8 chars of the new hash
+On agent or skill definition update:
+- Regenerate `.file-versions`: `{ find agents -name "*.md" -type f; find skills -name "SKILL.md" -type f; } | sort | xargs sha256sum > .file-versions`
+- In `README.md`, bump the agent's or skill's version per the extent of the change, and sync the parenthesized hash next to it with the first 8 chars of the new hash
