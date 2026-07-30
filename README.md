@@ -35,7 +35,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 ### Code Navigation & Analysis
 - **code-analyst v2.0** (5e1e102c) - Deeply understand how systems work by examining documentation, code, and related materials; trace implementation flows and clarify ambiguous specifications.
 - **forensics-analyst v2.0** (b3844726) - Reverse-engineer explicitly provided files to trace data flow, decipher legacy logic, analyze schema evolution, and explain unfamiliar inherited code; no broad codebase scanning or modification.
-- **convention-auditor v1.0** (3ad4fbd8) - Infers the naming convention a codebase actually follows and reports where a target scope deviates from it — casing drift, non-English identifiers, false-friend translations, homoglyph tricks; read-only, ignores string content.
+- **convention-auditor v1.0** (791ab040) - Infers the naming convention a codebase actually follows and reports where a target scope deviates from it — casing drift, non-English identifiers, false-friend translations, homoglyph tricks; read-only, ignores string content.
 - **rest-auditor v1.0** (874e4690) - Scans a REST endpoint set (all, or a natural-language scope like changed files or the last commit) framework-agnostically; reports anomalies against the set's own convention and per-endpoint test coverage (underlying code, HTTP-level integration); read-only.
 
 ### Planning & Architecture
@@ -46,23 +46,23 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **task-completer v2.1** (bfc2adaa) - Systematically recover from failed tasks by learning from past attempts and identifying root causes.
 
 ### Development & Implementation
-- **task-builder v2.1** (0b13db79) - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.
+- **task-builder v2.1** (c176823e) - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.
 - **change-executor v2.2** (a87ae5da) - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
-- **code-fixer v2.1** (dc75c416) - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
+- **code-fixer v2.1** (6cc6e095) - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
 - **code-refactorer v2.2** (c9091fe8) - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
-- **feature-builder v1.0** (0e27926f) - Orchestrates a feature or endpoint end to end by delegating to task-builder and test-builder, deciding coverage from repo convention; enforces unit and HTTP-client integration tests on REST endpoints.
+- **feature-builder v1.0** (9e9d1040) - Orchestrates a feature or endpoint end to end by delegating to task-builder and test-builder, deciding coverage from repo convention; enforces unit and HTTP-client integration tests on REST endpoints.
 - **complexity-pruner v4.0** (b13c3564) - Reduce over-engineering, unnecessary abstractions, accidental complexity, dead code, and unused dependencies while preserving identical behavior — with explicit reachability/usage guardrails against false-positive removal; also identifies behavior- and contract-preserving refactorings and delegates them to code-refactorer when available; on request, runs as a read-only review that reports findings without applying them.
-- **comment-sweeper v1.0** (3670caac) - Removes zero-signal comments and flags ones that contradict or drifted from the code they annotate; standard mode edits, review mode reports only.
+- **comment-sweeper v1.0** (4ecf1165) - Removes zero-signal comments and flags ones that contradict or drifted from the code they annotate; standard mode edits, review mode reports only.
 - **frontend-builder v3.0** (3d54eccc) - Modify or build frontend components, pages, layouts, styles, and interface copy across any stack with surgical precision; operates in an explicit match or design mode, and when building from scratch grounds a distinctive aesthetic direction in the subject, critiques it against known defaults, and holds a responsive/keyboard/reduced-motion quality floor.
 
 ### Testing & Quality
-- **test-builder v2.1** (551037f3) - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
-- **test-fixer v2.1** (00b672c6) - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
+- **test-builder v2.1** (79fc3388) - Design and implement spec-driven test suites with traceable assertions and systematic edge case coverage; can also produce spec-only coverage plans without writing code.
+- **test-fixer v2.1** (e909b97e) - Identify and repair broken tests after code changes; on request can diagnose-only or fix the implementation code rather than tests.
 - **fact-checker v2.0** (61ee9fdd) - Compare exactly two inputs — assertions, documentation, code, or test output — for semantic, structural, or behavioral consistency; declines anything other than a single pair.
 - **dotnet-cs-expert v1.1** (3f01c615) - Statically verify a C#/.NET solution for defects that compile clean and evade standard analyzers — DI wiring gaps, async hygiene, resource leaks, config drift, cross-project dead code, unused NuGet/Paket dependencies, nullable erosion, AI-generation smells, EF Core migration alignment, and version-gated syntax advisories; read-only and report-only, recommends live-database checks rather than performing them.
 
 ### Documentation & Maintenance
-- **docs-maintainer v.21** (75d36d92) - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
+- **docs-maintainer v.21** (2ce533de) - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
 
 ## Available Skills
 - **dotnet-preflight v1.0** (fcb6c0e8) - Verifies a .NET backend feature branch is safe to open a PR: solution builds cleanly, EF Core migrations are healthy against the local dev database, and the application starts without error; verification only, never fixes what it finds.

@@ -6,7 +6,7 @@ Collection of custom Claude Code agent and skill definitions. Typical session: c
 ## Agent definitions
 Strictly follow the Claude Code agent specification. If uncertain or spec may have changed, fetch current docs before writing any definition
 
-Definitions live in `agents/<category>/`. Parallel text descriptions for programmatic regeneration live in `agent-descriptions/<category>/`
+Definitions live in `agents/<category>/`
 
 Narrow, domain-specific agents (single language/framework, e.g. `dotnet-cs-expert`) live in `agents/<category>/specialists/` instead of flat under the category. Broad, general-purpose agents stay flat
 
@@ -23,7 +23,6 @@ Narrow, domain-specific agents (single language/framework, e.g. `dotnet-cs-exper
 
 ## What to check before editing
 - `README.md` has the full agent catalog with descriptions; keep it in sync after adding/removing agents
-- `agent-descriptions/` mirrors `agents/` structure; update both when changing an agent
 
 ## Skill definitions
 Skills live in `skills/<skill-name>/SKILL.md`, one directory per skill, no category grouping. Follow the Claude Code skill specification; a skill's supporting files (scripts, references) are not version-tracked, only `SKILL.md`
