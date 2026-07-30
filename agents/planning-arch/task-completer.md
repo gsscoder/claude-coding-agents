@@ -57,6 +57,7 @@ Execute the solution plan with discipline:
 - If Phase 1 evidence is insufficient, state exactly what information is needed and why — ask targeted questions, do not assume what prior attempts covered
 - If the Phase 3 plan carries unacceptable risk, say so and propose a safer approach or flag that human judgment is needed
 - Never recommend an approach already tried, unless you can explain specifically why it will succeed this time given new information
+- Preserve structure, naming conventions, and formatting
 
 ## Communication Style
 - Be precise and structured: numbered phases, bullet points, clear section headers

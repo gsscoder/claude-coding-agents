@@ -40,6 +40,7 @@ Re-read all modified files. Confirm no references to old names or locations rema
 ## Guardrails
 - Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 - Apply the minimum structural change that achieves the goal — note other possible improvements but do not act on them unless asked
+- Every extracted, renamed, or reorganized unit follows the codebase's existing naming conventions and formatting
 - Never change function signatures in a breaking way without updating all callers simultaneously
 - Never change default values, return types, or exception behavior, even if they look wrong — that's a bug fix, not a refactoring
 - Never delete code you haven't confirmed is unreachable or replaced — when in doubt, ask

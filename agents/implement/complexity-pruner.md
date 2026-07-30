@@ -119,6 +119,7 @@ If you identify multiple independent simplifications, address them in order from
 ## Hard Limits
 - Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 - Do not add anything new — no new abstractions, no new helpers, no new patterns introduced as replacements
+- Whatever code remains after a removal follows the codebase's existing naming conventions and formatting
 - Do not fix bugs you encounter along the way — note them separately if critical, but do not fix them
 - Do not improve performance as a goal — accept it only as an incidental side effect
 - Do not opine on architecture beyond the simplification at hand

@@ -43,15 +43,15 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **design-reviewer v2.0** (4baadbf8) - Identify unnecessary complexity and over-engineered patterns in specific code components or architectural decisions.
 - **feature-planner v2.0** (edd5bb09) - Plan implementation changes for a submitted feature description; identify affected files, required changes, sequencing, and risks; can also review feature scope and codebase impact without planning implementation steps.
 - **task-planner v2.0** (59c7aec6) - Analyze project state and develop strategic roadmaps for future development.
-- **task-completer v2.0** (8e9a35f0) - Systematically recover from failed tasks by learning from past attempts and identifying root causes.
+- **task-completer v2.1** (bfc2adaa) - Systematically recover from failed tasks by learning from past attempts and identifying root causes.
 
 ### Development & Implementation
 - **task-builder v2.1** (0b13db79) - Implement development tasks from a single well-scoped step to a full feature translated from a design discussion, API spec, or documented requirement; also handles rewrites and rebuild-style refactors where the replacement is decided; declines requests with open design decisions remaining.
-- **change-executor v2.1** (681bcb8d) - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
+- **change-executor v2.2** (a87ae5da) - Execute a single, clearly scoped code modification (rename, value swap, signature adjustment, small addition/removal); declines requests that are too broad or require design decisions.
 - **code-fixer v2.1** (dc75c416) - Apply targeted, minimal corrections to resolve compile errors, type mismatches, logic bugs, and precise modifications without touching unrelated code.
-- **code-refactorer v2.1** (4efb94a7) - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
+- **code-refactorer v2.2** (c9091fe8) - Refactor code with surgical precision while maintaining exact functionality and minimizing disruption.
 - **feature-builder v1.0** (0e27926f) - Orchestrates a feature or endpoint end to end by delegating to task-builder and test-builder, deciding coverage from repo convention; enforces unit and HTTP-client integration tests on REST endpoints.
-- **complexity-pruner v3.0** (4f9baeae) - Reduce over-engineering, unnecessary abstractions, accidental complexity, dead code, and unused dependencies while preserving identical behavior — with explicit reachability/usage guardrails against false-positive removal; on request, runs as a read-only review that reports simplifications without applying them.
+- **complexity-pruner v3.1** (4de9aa41) - Reduce over-engineering, unnecessary abstractions, accidental complexity, dead code, and unused dependencies while preserving identical behavior — with explicit reachability/usage guardrails against false-positive removal; on request, runs as a read-only review that reports simplifications without applying them.
 - **comment-sweeper v1.0** (3670caac) - Removes zero-signal comments and flags ones that contradict or drifted from the code they annotate; standard mode edits, review mode reports only.
 - **frontend-builder v3.0** (74392689) - Modify or build frontend components, pages, layouts, styles, and interface copy across any stack with surgical precision; operates in an explicit match or design mode, and when building from scratch grounds a distinctive aesthetic direction in the subject, critiques it against known defaults, and holds a responsive/keyboard/reduced-motion quality floor.
 

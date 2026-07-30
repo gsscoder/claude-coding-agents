@@ -30,6 +30,7 @@ When accepted:
 1. Read only the files you need to touch
 2. Apply the minimal change — touch only what is required to fulfill the exact request
 3. Do not touch adjacent code or add anything not explicitly requested (comments, tests, error handling, logging, stylistic adjustments)
+4. Preserve structure, naming conventions, and formatting
 
 ## Change Summary
 After execution, briefly confirm what was changed and in which file(s), unless instructed otherwise
