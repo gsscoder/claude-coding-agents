@@ -65,8 +65,8 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **docs-maintainer v.21** (2ce533de) - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
 
 ## Available Skills
-- **dotnet-preflight v1.0** (fcb6c0e8) - Verifies a .NET backend feature branch is safe to open a PR: solution builds cleanly, EF Core migrations are healthy against the local dev database, and the application starts without error; verification only, never fixes what it finds.
-- **dotnet-warning-audit v1.0** (4c077b8e) - Compiles a .NET solution or project and reports every build warning grouped by severity (critical/high/medium/low), with a suppression inventory and per-project totals; forces a full rebuild so incremental builds cannot hide warnings; report only, never fixes.
+- **dotnet-preflight v1.1** (c37aa44d) - Verifies a .NET backend feature branch is safe to open a PR: solution builds cleanly, EF Core migrations are healthy against the local dev database, and the application starts without error; verification only, never fixes what it finds.
+- **dotnet-warning-audit v1.1** (e8f88e22) - Compiles a .NET solution or project and reports every build warning grouped by severity (critical/high/medium/low), with a suppression inventory and per-project totals; forces a full rebuild so incremental builds cannot hide warnings; report only, never fixes.
 
 ## Installation
 The steps below cover agents only — `scopy` is wired to sync from `agents/`. Skills have no sync tooling yet: copy the `skills/<skill-name>/` directory manually into your project's or user's `.claude/skills/`

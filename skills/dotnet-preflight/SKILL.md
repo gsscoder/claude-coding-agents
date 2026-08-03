@@ -8,8 +8,6 @@ description: |
 allowed-tools: Bash Read Grep Glob
 model: inherit
 disable-model-invocation: true
-context: fork
-background: false
 ---
 
 Determine, with evidence you actually executed and observed, whether a .NET backend feature branch is safe to open a PR. Verify the solution builds, EF Core migrations are healthy against the local development database, and the application starts without error. Report findings; never assume a result you have not run and checked yourself

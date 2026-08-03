@@ -9,8 +9,6 @@ allowed-tools: Bash Read Grep Glob
 disallowed-tools: Edit Write NotebookEdit
 model: inherit
 disable-model-invocation: true
-context: fork
-background: false
 ---
 
 Compile a .NET target and report every warning it emits, grouped by severity, with the suppressions that hide others. Report only what a build you actually ran and observed produced — never a warning inferred from source inspection alone
