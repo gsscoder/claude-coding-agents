@@ -1,7 +1,11 @@
 # Coding Agents & Skills
 A collection of specialized subagents and skills for [Claude Code](https://claude.com/claude-code), designed to enhance AI-assisted development workflow with focused, expert capabilities.
 
-![Screen](docs/screen.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/pipeline-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/pipeline-light.png">
+  <img alt="Agent pipeline: plan fans out to task-builder, test-builder and change-executor, then complexity-pruner, code-fixer, a session reset, and fact-checker" src="docs/pipeline-light.png" width="100%">
+</picture>
 
 ## What are Custom Subagents?
 Custom subagents are specialized AI assistants in Claude Code that focus on specific tasks. Each subagent is optimized with:
