@@ -6,7 +6,6 @@ description: |
   Not for fixing warnings, editing suppression settings, or judging runtime behavior — report only
 argument-hint: "[solution-or-project-path]"
 allowed-tools: Bash Read Grep Glob
-disallowed-tools: Edit Write NotebookEdit
 model: inherit
 disable-model-invocation: true
 ---
