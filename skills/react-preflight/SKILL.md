@@ -5,7 +5,7 @@ description: |
   lockfile that isn't drifted, the app typechecks and builds for production, the test suite is
   green and actually ran, and both the dev server and the production build start without error.
   Not for fixing failing builds, broken types, or red tests — verification only
-allowed-tools: Bash Read Grep Glob mcp__claude-in-chrome__tabs_create_mcp mcp__claude-in-chrome__navigate mcp__claude-in-chrome__get_page_text mcp__claude-in-chrome__read_console_messages mcp__claude-in-chrome__read_network_requests mcp__claude-in-chrome__tabs_close_mcp
+allowed-tools: Bash Read Grep Glob
 model: inherit
 disable-model-invocation: true
 ---
@@ -19,10 +19,6 @@ Run every check in Methodology, including the two that mutate state: a clean dep
 ### Fast Mode — Static Only
 Activate when the user says "quick check", "static only", "don't reinstall", "don't run it", or otherwise asks to skip execution. Skip the clean install and both server starts. Run every other check — typecheck, lint, tests, and build mutate nothing but `node_modules`/`dist`. Mark the skipped checks SKIPPED, never PASS, and the overall verdict INCONCLUSIVE rather than READY
 
-### Browser Mode — Render Proof (opt-in add-on to Default)
-Activate only when the user explicitly asks for it — "check it in the browser", "browser mode", "verify it actually renders". Not run by default, since it needs the `claude-in-chrome` MCP server, which may not be installed in the target project
-
-Runs after Step 6's production preview is up. If the first `mcp__claude-in-chrome__*` call fails (server not connected), mark this section SKIPPED with that reason and continue — this is a soft dependency, never a preflight blocker
 
 ## What You Check
 ### Dependency Health
@@ -51,11 +47,6 @@ Runs after Step 6's production preview is up. If the first `mcp__claude-in-chrom
 - Dev server reaches a listening state within a bounded timeout, no unhandled error in stdout/stderr during startup
 - Production preview (`vite preview`, `next start`, or equivalent) serves the built output; a request to `/` returns 200 with the app's mount node present in the HTML — a build that exits zero can still preview-serve a stale or empty shell
 
-### Render Health (Browser Mode only)
-- Preview page's mount node (e.g. `#root`, `#app`) has child nodes after load — an HTML 200 with an empty mount node is a white screen the HTTP-only check in Runtime Health cannot see
-- Zero uncaught console errors during first render
-- Zero failed network requests (404s) for chunks or assets — the usual signature of a broken `base`/`publicPath`
-
 ### Branch Hygiene
 - `debugger` statements or stray `console.log` introduced on this branch vs `main`
 - New dependencies added on this branch, listed for the reviewer
@@ -82,10 +73,7 @@ Start the dev server with output redirected to a temp log file. Poll up to 30s f
 
 Then start the production preview server against the Step 5 build output the same way. Once listening, request `/` and confirm a 200 and that the mount node (e.g. `#root`, `#app`) appears in the returned HTML. Kill it and free the port regardless of outcome
 
-### Step 7 — Render Verification (Browser Mode only)
-Skip entirely unless Browser Mode is active. Open a new tab with `mcp__claude-in-chrome__tabs_create_mcp`, navigate to the Step 6 preview URL, then read `mcp__claude-in-chrome__get_page_text` to confirm the mount node rendered content, `mcp__claude-in-chrome__read_console_messages` for uncaught errors, and `mcp__claude-in-chrome__read_network_requests` for failed asset loads. Close the tab with `mcp__claude-in-chrome__tabs_close_mcp` regardless of outcome. Never trigger a JS `alert`/`confirm`/`prompt` while doing this — it blocks the tab
-
-### Step 8 — Report
+### Step 7 — Report
 Produce the Output Format below. Include every check that ran, including SKIPPED ones. Do not stop at the first failure — run every step that doesn't depend on a failed one, and report all failures together
 
 ## Decision Framework
@@ -119,6 +107,4 @@ If NOT READY, add a "Required follow-up" list — the exact command or fix neede
 - Do not report PASS for a check that did not actually execute
 - Do not leave a server running or a bound port or temp file behind once a check completes
 - Do not skip a step because an earlier one looked fine — run every step Steps 1–6 list
-- Do not fail the overall verdict because Browser Mode is unavailable — mark it SKIPPED and continue; it is a soft dependency on the `claude-in-chrome` MCP server, not a hard requirement
-- Do not click, submit, or interact with anything on the previewed page beyond navigating and reading — Browser Mode observes, it does not exercise the app
 - Do not fix a failing build, type error, lint error, or red test you encounter along the way — report it and stop

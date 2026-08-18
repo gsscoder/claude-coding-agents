@@ -72,7 +72,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 ## Available Skills
 - **dotnet-preflight v1.1** (c37aa44d) - Verifies a .NET backend feature branch is safe to open a PR: solution builds cleanly, EF Core migrations are healthy against the local dev database, and the application starts without error; verification only, never fixes what it finds.
 - **dotnet-warning-audit v1.2** (5b1d65fe) - Compiles a .NET solution or project and reports every build warning grouped by severity (critical/high/medium/low), with a suppression inventory and per-project totals; forces a full rebuild so incremental builds cannot hide warnings; report only, never fixes.
-- **react-preflight v1.0** (b5aba1e3) - Verifies a React frontend feature branch is safe to open a PR: dependencies install from an undrifted lockfile, the app typechecks/lints/builds, the test suite is green and actually ran, and the dev server and production preview both start without error; optional Browser Mode uses claude-in-chrome to catch white-screen renders an HTTP check can't see; verification only, never fixes what it finds.
+- **react-preflight v1.0** (f4c60ab7) - Verifies a React frontend feature branch is safe to open a PR: dependencies install from an undrifted lockfile, the app typechecks/lints/builds, the test suite is green and actually ran, and the dev server and production preview both start without error; verification only, never fixes what it finds.
 
 ## Installation
 The steps below cover agents only — `scopy` is wired to sync from `agents/`. Skills have no sync tooling yet: copy the `skills/<skill-name>/` directory manually into your project's or user's `.claude/skills/`
