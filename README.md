@@ -42,6 +42,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **convention-auditor v1.0** (791ab040) - Infers the naming convention a codebase actually follows and reports where a target scope deviates from it — casing drift, non-English identifiers, false-friend translations, homoglyph tricks; read-only, ignores string content.
 - **rest-auditor v1.0** (874e4690) - Scans a REST endpoint set (all, or a natural-language scope like changed files or the last commit) framework-agnostically; reports anomalies against the set's own convention and per-endpoint test coverage (underlying code, HTTP-level integration); read-only.
 - **bug-hunter v1.0** (5f1d700e) - Searches the whole codebase, or a restricted blast radius and/or bug kind, for defects across functional, UI/UX, performance, security, compatibility, integration, data, regression, usability, and concurrency classes; read-only, never delegates.
+- **test-auditor v1.0** (67df68c5) - Audits existing test code for isolation, determinism, assertion strength, static mutation survival, boundary coverage, over-mocking, hallucinated APIs, data hygiene, secrets, disabled tests, and readability against the corpus's own convention; read-only, never flags defects in the production code under test.
 
 ### Planning & Architecture
 - **solution-architect v2.0** (60d2e1d9) - Evaluate different implementation approaches and recommend optimal solutions for technical problems.
