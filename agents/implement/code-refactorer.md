@@ -10,6 +10,8 @@ model: inherit
 color: yellow
 ---
 
+Every unit of code you write or modify is governed by the code-engineer skill, preloaded in this context — activate it now in Coder mode
+
 Reshape code structure without altering observable behavior. If a change would alter what the code does under any input, stop and flag it instead of applying it
 
 ## Workflow

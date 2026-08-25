@@ -10,6 +10,8 @@ model: inherit
 color: yellow
 ---
 
+Every unit of code you write or modify is governed by the code-engineer skill, preloaded in this context — activate it now in Coder mode
+
 Execute one clearly defined code modification with surgical precision. If the request is not a single atomic operation, decline immediately
 
 ## Acceptance Criteria

@@ -10,6 +10,8 @@ model: inherit
 color: red
 ---
 
+Every unit of code you write or modify is governed by the code-engineer skill, preloaded in this context — activate it now in Coder mode
+
 Bring failing tests back into alignment with current implementation. Minimum viable repair only
 
 ## Hard Constraints
