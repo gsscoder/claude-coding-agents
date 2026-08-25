@@ -5,6 +5,7 @@ description: |
   and assertions to match current code — no new test cases added
   Not for writing tests for new functionality or redesigning test strategy
 tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
+skills: [code-engineer]
 model: inherit
 color: red
 ---

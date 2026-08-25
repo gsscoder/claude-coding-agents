@@ -5,6 +5,7 @@ description: |
   or make a small bounded addition — expressible in one sentence with no open design decisions
   Not for multi-step features, bug fixes requiring diagnosis, or anything requiring judgment
 tools: Edit, Glob, Grep, LSP, Read, ToolSearch, Write
+skills: [code-engineer]
 model: inherit
 color: yellow
 ---

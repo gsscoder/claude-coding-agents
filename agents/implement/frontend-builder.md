@@ -6,6 +6,7 @@ description: |
   When building from scratch with design latitude, produces distinctive production-grade interfaces
   Not for backend logic, API design, or resolving ambiguous design intent
 tools: Bash, Edit, Glob, Grep, LSP, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
+skills: [code-engineer]
 model: inherit
 color: yellow
 ---

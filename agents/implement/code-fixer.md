@@ -5,6 +5,7 @@ description: |
   targeted refactors, and precise multi-file modifications
   Not for broad architectural redesigns or feature development
 tools: Bash, Edit, Glob, Grep, LSP, Read, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
+skills: [code-engineer]
 model: inherit
 color: yellow
 ---

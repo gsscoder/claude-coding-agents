@@ -6,6 +6,7 @@ description: |
   also handles rewrites and rebuild-style refactors where the replacement is decided
   Not for tasks with open design decisions or requiring architectural judgment
 tools: Bash, Edit, Glob, Grep, LSP, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
+skills: [code-engineer]
 model: inherit
 color: yellow
 ---

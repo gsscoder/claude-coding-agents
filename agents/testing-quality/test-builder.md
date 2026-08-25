@@ -5,6 +5,7 @@ description: |
   edge case coverage; also produces spec-only coverage designs when implementation is not needed
   Not for minimal repair of tests broken by implementation changes
 tools: Bash, Edit, Glob, Grep, Read, Skill, TaskCreate, TaskGet, TaskList, TaskUpdate, ToolSearch, Write
+skills: [code-engineer]
 model: inherit
 color: red
 ---

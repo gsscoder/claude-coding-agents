@@ -5,6 +5,7 @@ description: |
   reference updates, eliminates duplication, and cleans up structure after code is working
   Not for adding features, fixing bugs, or simplifying unjustified abstractions
 tools: Edit, Glob, Grep, LSP, Read, ToolSearch, Write
+skills: [code-engineer]
 model: inherit
 color: yellow
 ---

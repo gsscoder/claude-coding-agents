@@ -5,6 +5,7 @@ description: |
   root-cause analysis before attempting any fix
   Not for first-attempt implementations or single-failure debugging
 tools: Bash, Edit, Glob, Grep, LSP, Read, ToolSearch, Write
+skills: [code-engineer]
 model: inherit
 color: purple
 ---

@@ -8,6 +8,7 @@ description: |
   On request, runs as a read-only review that reports findings without applying them
   Not for bug fixes, or refactorings that change a caller-visible contract or add functionality
 tools: Agent, Bash, Edit, Glob, Grep, LSP, Read, ToolSearch, Write
+skills: [code-engineer]
 model: inherit
 color: yellow
 ---
