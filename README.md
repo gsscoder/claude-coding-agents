@@ -71,6 +71,7 @@ It is preferable to **install them at the project level** to maintain tighter co
 - **docs-maintainer v.21** (2ce533de) - Create and update Markdown or readable documentation — for AI, humans, or both — keeping it accurate and synchronized with the codebase; operates on provided context, minimal project scanning.
 
 ## Available Skills
+- **code-engineer v1.0** (0dc3e8da) - Language-agnostic engineering discipline for writing and changing code: naming, responsibilities, complexity, control flow, state, errors, coupling, abstraction, testability, concurrency, performance, and change hygiene; Coder mode edits, Reviewer mode reports only.
 - **dotnet-preflight v1.1** (c37aa44d) - Verifies a .NET backend feature branch is safe to open a PR: solution builds cleanly, EF Core migrations are healthy against the local dev database, and the application starts without error; verification only, never fixes what it finds.
 - **dotnet-warning-audit v1.2** (5b1d65fe) - Compiles a .NET solution or project and reports every build warning grouped by severity (critical/high/medium/low), with a suppression inventory and per-project totals; forces a full rebuild so incremental builds cannot hide warnings; report only, never fixes.
 - **react-preflight v1.0** (f4c60ab7) - Verifies a React frontend feature branch is safe to open a PR: dependencies install from an undrifted lockfile, the app typechecks/lints/builds, the test suite is green and actually ran, and the dev server and production preview both start without error; verification only, never fixes what it finds.
