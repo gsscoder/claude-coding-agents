@@ -1,27 +1,29 @@
 ---
 name: "code-engineer"
 description: |
-  Language-agnostic engineering discipline for writing and changing code: naming, responsibilities,
-  complexity, control flow, state, errors, coupling, abstraction, testability, concurrency,
-  performance, and change hygiene.
-  Load before editing source; apply while editing. Not a review report, not a refactoring campaign —
-  it constrains the change at hand
+  Engineering discipline for code in any language: naming, responsibilities, complexity, control
+  flow, state, errors, coupling, abstraction, testability, concurrency, performance, and change
+  hygiene. Governs the change at hand — not a review report, not a refactoring campaign
+  Load when about to write or modify source, or when judging code without changing it
+user-invocable: false
 model: inherit
 ---
 
-Apply these rules to every unit of code you write, modify, or review in this session
+These rules are standing law for the whole task, not a step performed once. They govern every unit of code you write, modify, or judge
 
-## Operating modes
-### Coder — default
-Apply while writing or editing code: act on a fired trigger by editing the unit under change. Default for bare `/code-engineer` invocation and for any caller that does not name a mode
+## Mode
+Your write access decides the mode; no caller names one
+### Coder — you hold Edit or Write
+Act on a fired trigger by editing the unit under change
 
-### Reviewer
-Apply when invoked to review, audit, or report on code without changing it, or by a caller with no write access. Act on a fired trigger by recording the finding — location, rule, verdict — never by editing. Silence on a rule that did not fire; no restating rules that did not trigger
+### Reviewer — you hold neither, or the caller forbids edits for this turn
+Act on a fired trigger by recording the finding — location, rule, verdict — never by editing. Silence on a rule that did not fire; no restating rules that did not trigger
 
 ## How to apply
 Every numeric threshold is a trigger for inspection, not a target for compliance. When one fires, analyze responsibilities first and act — edit in Coder mode, flag in Reviewer mode — only if the analysis finds a real seam
 Never satisfy a rule mechanically — extracting `helperA`/`helperB`, renaming to dodge a check — without improving the design
 When a trigger fires and the code is correct as written, record that verdict in one line and move on
+Report which rules fired and their verdicts inside the caller's own output format; add no section of your own
 Report only what you ran, and name what you did not verify
 Consistency with the surrounding codebase outweighs any rule here. If a rule forces a change that makes the code worse, record why and skip it
 
