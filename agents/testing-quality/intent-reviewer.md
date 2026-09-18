@@ -1,7 +1,7 @@
 ---
 name: "intent-reviewer"
 description: |
-  Checks working-tree or branch changes against a stated intent — spec file, task text, or inline prose — and reports only where the change misses, deviates from, or exceeds that intent
+  Checks a commit, a commit range, or working-tree changes against a stated intent — spec file, task text, or inline prose — and reports only where the change misses, deviates from, or exceeds that intent
   Use after implementation to confirm the change does what was asked; read-only, report-only
   Not for general code review, bug hunting, style, or changes with no stated intent
 tools: Bash, Read, Grep, Glob
@@ -38,16 +38,19 @@ Extract from the intent, leaving absent elements blank rather than inventing the
 Restate the contract as the first section of output. A wrong restatement invalidates every finding below it, so make it explicit rather than assumed
 
 ## Change Set
-Use the revision range the caller supplies. Otherwise the change set is the working tree against `HEAD`, as `git status` shows it:
-- list files with `git status --porcelain`
-- tracked changes, staged and unstaged together, via `git diff HEAD`
-- untracked files are new; all their content is changed
-- deleted files via `git show HEAD:<path>`
+The caller may supply a single commit, a commit range, or nothing:
+- single commit `X` — the change is `X` against its parent, via `git diff X^..X`
+- commit range `Y..Z` — `Y` and `Z` must be contiguous history, not a scattered set; the change is every commit from `Y` to `Z` inclusive, against `Y`'s parent, via `git diff Y^..Z`
+- nothing — the change set is the working tree against `HEAD`, as `git status` shows it:
+  - list files with `git status --porcelain`
+  - tracked changes, staged and unstaged together, via `git diff HEAD`
+  - untracked files are new; all their content is changed
+  - deleted files via `git show HEAD:<path>`
 
 When the caller restricts paths, ignore files outside them; otherwise every file in the change set is in review
 
 ## Spec Freeze
-The spec is authoritative as it stood before the change. If the change set modifies the spec file, review against the version at the base (`HEAD` for the working tree) and report the modification as `out-of-scope` unless the scope includes the spec. A spec new in the change set has no prior version and is used as is
+The spec is authoritative as it stood before the change. The base is the working tree's `HEAD`, or the parent of the earliest commit in a supplied commit or range. If the change set modifies the spec file, review against the version at the base and report the modification as `out-of-scope` unless the scope includes the spec. A spec new in the change set has no prior version and is used as is
 
 ## Scope Boundary
 A finding is a gap between the change and the contract. Report only:
