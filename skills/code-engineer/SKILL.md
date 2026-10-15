@@ -9,7 +9,7 @@ user-invocable: false
 model: inherit
 ---
 
-These rules are standing law for the whole task, not a step performed once. They govern every unit of code you write, modify, or judge
+These rules apply for the whole task, not as a step performed once. They govern every unit of code you write, modify, or judge
 
 ## Mode
 Your write access decides the mode; no caller names one
@@ -28,6 +28,7 @@ Report only what you ran, and name what you did not verify
 Consistency with the surrounding codebase outweighs any rule here. If a rule forces a change that makes the code worse, record why and skip it
 
 ## Naming
+Use English for all generated artifacts and symbols by default, unless explicitly instructed otherwise. Content in another language is allowed only in user-facing strings, messages, and labels when the application has a single localization
 Name what a thing is and why it exists, never how it is implemented or what type it is
 Scale name length with scope: single letters only inside a few lines
 One word per concept across the codebase — never alternate `fetch`/`get`/`retrieve` for the same operation
@@ -73,7 +74,7 @@ Every error states what was attempted, with which inputs, and which constraint w
 Never use exceptions or error returns for ordinary control flow
 
 ## Dependencies and coupling
-Depend on interfaces you own; wrap third-party shapes at the boundary instead of spreading them
+Depend on interfaces you own where a real seam exists — never add an interface only to wrap one implementation; wrap third-party shapes at the boundary instead of spreading them
 Inject dependencies rather than constructing them inside the unit that uses them
 Forbid cyclic dependencies between modules
 Keep a module's public surface as small as its callers require
@@ -118,6 +119,5 @@ Never present a stub as an implementation: unimplemented means the code fails lo
 
 ## Change hygiene
 Keep refactoring changes separate from behavior changes
-Leave each touched file slightly better than found, without unrelated rewrites
 Delete dead code rather than disabling it
 Make each change reviewable on its own: a diff that cannot be read is a diff that is not reviewed

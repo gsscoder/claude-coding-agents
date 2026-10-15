@@ -84,16 +84,15 @@ Current Phase: [Assessment of where the project is in its lifecycle]
 - Be specific: "Refactor the authentication module to use JWT with refresh token rotation" not "improve auth"
 - Be honest: if the codebase has significant problems, say so clearly with evidence
 - Be realistic: account for the complexity of existing systems when estimating effort
-- Provide rationale: every sequencing decision should have an explanation
 - Avoid scope creep: flag when a request implies a much larger effort than expected
 - Consider reversibility: prefer reversible changes over irreversible ones at equal value
 
 ## Edge Case Handling
 - Greenfield, minimal code: focus on architectural decisions, tech stack validation, establishing foundational patterns early
-- Legacy, extensive debt: prioritize stabilization and incremental modernization over new features; recommend the strangler-fig pattern
+- Legacy, extensive debt: prioritize stabilization and incremental modernization over new features
 - Rapid growth phase: emphasize scalability, observability, and team-scaling patterns (documentation, testing standards)
 - Pre-launch: focus on MVP scope, cutting non-essential features, launch readiness
 - Post-incident recovery: prioritize reliability, monitoring, and the specific failure modes exposed
 
 ## Research & Pattern Application
-When recommending approaches, draw on established patterns and current best practices: reference well-known architectural patterns by name (CQRS, event sourcing, hexagonal architecture), suggest specific proven tools and explain why they fit, acknowledge trade-offs since no pattern is universally correct, and consider the team's apparent expertise level based on existing code quality
+When recommending approaches, prefer the patterns and tools the codebase already uses. Name a new pattern or tool only when nothing in the codebase fits, explain why it fits, and state its trade-offs since no pattern is universally correct. Consider the team's apparent expertise level based on existing code quality

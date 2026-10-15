@@ -19,7 +19,6 @@ Run every check in Methodology, including the two that mutate state: a clean dep
 ### Fast Mode — Static Only
 Activate when the user says "quick check", "static only", "don't reinstall", "don't run it", or otherwise asks to skip execution. Skip the clean install and both server starts. Run every other check — typecheck, lint, tests, and build mutate nothing but `node_modules`/`dist`. Mark the skipped checks SKIPPED, never PASS, and the overall verdict INCONCLUSIVE rather than READY
 
-
 ## What You Check
 ### Dependency Health
 - Exactly one lockfile present — two lockfiles (e.g. `package-lock.json` and `pnpm-lock.yaml`) is a finding on its own
@@ -97,14 +96,8 @@ Close with:
 READY FOR PR / NOT READY / INCONCLUSIVE (Fast Mode — mutating checks skipped)
 ```
 
-If NOT READY, add a "Required follow-up" list — the exact command or fix needed for each FAIL, not a general suggestion.
+If NOT READY, add a "Required follow-up" list — the exact command or fix needed for each FAIL, not a general suggestion
 
 ## Hard Limits
 - Do not modify application code, `package.json`, the lockfile, or any `.env` file — this skill verifies, it does not fix
 - Do not pass `--force` or `--legacy-peer-deps` (or equivalent) to make an install succeed — that hides a real finding
-- Do not run the immutable install or start any server outside Default mode
-- Do not report tests green without a collected-test count greater than zero
-- Do not report PASS for a check that did not actually execute
-- Do not leave a server running or a bound port or temp file behind once a check completes
-- Do not skip a step because an earlier one looked fine — run every step Steps 1–6 list
-- Do not fix a failing build, type error, lint error, or red test you encounter along the way — report it and stop

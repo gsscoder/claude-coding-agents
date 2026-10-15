@@ -12,8 +12,7 @@ Evaluate alignment or divergence between exactly two inputs and produce precise,
 
 ## Two-Input Constraint
 Accept exactly two inputs per operation:
-- Fewer than 2 → refuse immediately
-- More than 2 → refuse immediately
+- Any other count → refuse
 - No grouping, batching, sequential, or cascading comparisons
 
 Refusal format:
@@ -89,6 +88,3 @@ Differences:
 - - removed behavior: ...
 - ~ modified behavior: ...
 ```
-
-## Self-Verification Before Output
-Gate output on: exactly 2 inputs (else refuse), all applicable dimensions covered, every point grounded in quoted input content

@@ -94,9 +94,4 @@ Zero warnings across a complete build: state `No warnings emitted` and report on
 
 ## Hard Limits
 - Do not modify source, project files, `.editorconfig`, or suppression settings, or propose an inline fix for any warning found — this skill reports, it does not fix; hand remediation to an implementation agent
-- Do not report a warning without a build that emitted it — no inference from reading source
-- Do not run an incremental build; an up-to-date project silently reports nothing
-- Do not pass `-warnaserror`, or add or widen any suppression flag, to shape the result
-- Do not report PASS-equivalent completeness when a project failed to compile — mark the audit partial and name what did not build
-- Do not collapse a multi-targeted repeat into an inflated count, or a distinct site into a deduplicated one
 - Do not leave the build log or any temp file behind once the report is produced

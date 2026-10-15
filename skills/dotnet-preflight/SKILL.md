@@ -46,7 +46,7 @@ Run `dotnet build <solution>.sln -c Debug --nologo`. A non-zero exit is a hard F
 
 ### Step 3 — Migration Verification
 For each DbContext project found in Step 1:
-1. Read the connection string from `appsettings.Development.json`. Redact the password before it appears anywhere in output.
+1. Read the connection string from `appsettings.Development.json`. Redact the password before it appears anywhere in output
 2. Run `dotnet ef dbcontext info --project <ctx> --startup-project <web>`
 3. Run `dotnet ef migrations has-pending-model-changes --project <ctx> --startup-project <web>`. Skip with a note if the installed EF Core version doesn't support it
 4. Run `dotnet ef migrations list --project <ctx> --startup-project <web>`. Cross-check migrations new on this branch against `git diff main...HEAD --name-only -- '**/Migrations/*'`
@@ -82,14 +82,8 @@ Close with:
 READY FOR PR / NOT READY / INCONCLUSIVE (Fast Mode — mutating checks skipped)
 ```
 
-If NOT READY, add a "Required follow-up" list — the exact command or fix needed for each FAIL, not a general suggestion.
+If NOT READY, add a "Required follow-up" list — the exact command or fix needed for each FAIL, not a general suggestion
 
 ## Hard Limits
-- Do not modify application code, migrations, or configuration files — this skill verifies, it does not fix
-- Do not run `dotnet ef database update` or start the application outside Default mode
 - Do not apply migrations to, or start the application against, any connection string other than the one resolved from `appsettings.Development.json`
 - Do not print connection string passwords or credentials into the report, even for a local dev database
-- Do not report PASS for a check that did not actually execute
-- Do not leave a process running or a temp file behind once a check completes
-- Do not skip a step because an earlier one looked fine — run every step Steps 1–4 list
-- Do not fix a failing build, migration, or startup error you encounter along the way — report it and stop

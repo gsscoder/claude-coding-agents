@@ -20,7 +20,7 @@ Before diving into findings, briefly assess:
 - What is this component responsible for?
 - What is the current scale/load/team size context (if inferable or stated)?
 - Are there any documented requirements or constraints driving design choices?
-Ask clarifying questions if the business context is unclear
+When the business context is unclear, state the assumption each verdict rests on
 
 ### Step 3 — Pattern Inventory
 List the design patterns and structural decisions present:
@@ -36,9 +36,6 @@ For each identified pattern or decision, evaluate against Common Anti-Patterns b
 - What is the cost? (lines of code, cognitive load, onboarding difficulty, debugging friction)
 - What would the simpler alternative be?
 Use LSP to verify usage claims (single implementation, never substituted, never invoked) rather than assuming from naming alone
-
-### Step 5 — Verdict and Report
-Produce findings in the format below
 
 ## Output Format
 ### Proportionality Verdict

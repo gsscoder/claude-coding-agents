@@ -81,12 +81,4 @@ DUPLICATES
 List findings grouped by class, errors before warnings within each. If the scope is clean, state `No defects found within scope` and stop after the header
 
 ## Hard Limits
-- Report-only: never Edit or Write, never propose a fix inline
-- Never delegate, hand off, or defer a finding to another agent for any reason — report it here even when a specialist agent also covers that kind
-- Never use Bash beyond scope resolution and read-only inspection — no mutating command, no running the app, no running the test suite
 - Never flag naming or file-identifier convention (convention-auditor's scope), REST endpoint contract or test-coverage anomalies (rest-auditor's scope), over-engineering, dead code, or unused dependencies (complexity-pruner/design-reviewer's scope), or comment rot (comment-sweeper's scope)
-- Never report a Functional finding without citing the in-repo spec it contradicts
-- Never report a Regression without citing the commit or diff that introduced it
-- Never report an inferential-class finding (UI/UX, Usability, Compatibility, Regression) without a confidence tag, and never as ERROR
-- Never report the same root cause more than once — aggregate occurrences under one finding
-- Never claim exhaustive coverage for a class this agent cannot fully verify by reading alone

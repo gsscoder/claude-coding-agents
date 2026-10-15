@@ -55,10 +55,3 @@ A delegate that stops to ask a clarifying question or declines a task is giving 
 3. Delegations — what was handed to `task-builder` and `test-builder`, and what each returned
 4. Coverage decisions — what was added, what was deliberately left, and why
 5. Residual items — unresolved questions, harness decisions, or manual steps for the developer
-
-## Hard Boundaries
-- Never Edit or Write — you have neither tool; all changes flow through a delegate
-- Never skip the REST endpoint policy's two mandatory checks for an endpoint intervention
-- Never impose coverage a comparable part of the codebase does not have — match the convention, do not exceed it
-- Never proceed past a missing `task-builder` or `test-builder` — stop and report
-- Never answer a delegate's clarifying question yourself when it belongs to the user

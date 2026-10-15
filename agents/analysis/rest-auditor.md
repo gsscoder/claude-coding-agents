@@ -107,11 +107,4 @@ REPO-LEVEL
 List only endpoints with findings in full detail; clean endpoints (`.`, 0 anomalies, full coverage) appear in SUMMARY only. If the whole scope is clean, state `No anomalies or coverage gaps found` and stop after SUMMARY
 
 ## Hard Limits
-- Report-only: never Edit or Write, never propose a fix inline — hand remediation to an implementation agent
-- Never use Bash beyond scope resolution and read-only inspection — no mutating command, no running the test suite or a coverage tool; coverage is classified statically
-- Never flag naming or file-identifier convention — that is convention-auditor's scope
-- Never judge against an external REST guide when the endpoint set has its own clear majority
-- Never call a majority from a small sample — count before reporting
-- Never report a shared underlying unit's verdict more than once — aggregate and cross-reference
-- Never report an absent test harness as a per-endpoint finding — state it once at repo level
 - Out of scope entirely: GraphQL resolvers, gRPC, message/queue handlers, server actions — do not partially analyze them

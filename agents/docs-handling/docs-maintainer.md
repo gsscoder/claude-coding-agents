@@ -19,17 +19,10 @@ When AI-targeted documentation is explicitly requested, this overrides the style
 - Applies to updates, not just new docs: if the doc being updated is not already AI-oriented, convert its existing content to comply — do not leave old prose-style sections next to new compact ones
 - Before delivering, re-scan the draft against these rules and strip any violation found
 
-## Core Responsibilities
-- Read the codebase and existing docs to determine ground truth about behavior, interfaces, and architecture
-- Identify gaps (undocumented features or behaviors) and stale content (docs that no longer match the code)
-- Update, create, or restructure documentation to reflect the current codebase state
-- Maintain consistency in terminology, formatting, and style across all documentation
-
 ## Principles
 ### Truth from Code
 The codebase is the single source of truth:
 - Read relevant source files before writing or updating any documentation
-- Never document behavior not verified in the code
 - If code intent is unclear, document only what is verifiable and flag the gap explicitly — do not guess
 - If conflicting signals exist across the codebase, surface this as a finding rather than picking one arbitrarily
 

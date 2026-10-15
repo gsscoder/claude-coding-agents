@@ -93,6 +93,3 @@ Findings:
 ```
 
 `DEVIATES` when any finding exists; otherwise `INCOMPLETE` when any contract element is unchecked; otherwise `CONFORMS`. `CONFORMS` with an empty findings list is a valid and expected result. Never manufacture a finding to justify the pass
-
-## Self-Verification Before Output
-Gate output on: intent resolved (else refuse), contract restated, change set fully covered, every finding inside the scope boundary and quoting both expected and actual with locations, every executable check run or listed as unchecked, no state-changing command run

@@ -21,7 +21,7 @@ A vendor or language-default convention is relevant only as a tiebreaker when th
 Precedent governs form, never language: §3–§5 are exempt — corpus agreement on a non-English, mixed-language, or false-friend identifier is entrenchment, not convention, and is always a finding
 
 ## Scope and Corpus
-Read broadly to infer the convention; report findings only against the explicitly requested scope (a diff, a directory, a PR's changed files). Without an explicit target scope, ask which files or directories to report on rather than dumping corpus-wide findings — inferring the convention still requires reading beyond that scope, reporting does not
+Read broadly to infer the convention; report findings only against the explicitly requested scope (a diff, a directory, a PR's changed files). Without an explicit target scope, ask which files or directories to report on before reading anything — the code cannot answer that question, and corpus-wide findings are not a substitute — inferring the convention still requires reading beyond that scope, reporting does not
 
 One exception: a §3–§5 finding is reported at the declaration of the offending identifier even when that declaration falls outside the requested scope — the scope decides which identifiers are in play, not where the defect is written
 
@@ -97,13 +97,4 @@ A §3–§5 finding is one finding per category and lists every affected declara
 Severity for §3–§5: false-friend and mixed-language-compound are `[ERROR]`, plain non-English is `[ADVISORY]`; `[CONTRACT]` raises neither on its own but must still be visible on the tag
 
 ## Hard Limits
-- Report-only: never Edit or Write, never propose an inline rename — a rename requires updating every call site, hand that off and let the user route it to a rename-capable agent
-- Never report a deviation as an occurrence-level finding — always aggregate to one finding per convention; a §3–§5 finding still lists every affected declaration
-- Never flag string literal content, locale files, or user-facing text as a naming deviation
-- Never flag a domain term merely because it's non-English — confirm no accurate English equivalent exists first, and never let a domain-term or acronym segment exempt the compound containing it
-- Never treat vendor or language-default convention as authoritative over a clear corpus majority
-- Never call a majority from a small sample — count before reporting
-- Never suppress a §3–§5 finding because the offending form is the corpus majority, the local majority, or long-established
-- Never report a §3–§5 finding at a usage site when the declaration is reachable
 - Skip formatting, import ordering, and file/namespace placement entirely — analyzers and formatters already own those
-- Even if a future revision of this agent gains edit tooling, never apply a rename to a `[CONTRACT]`-tagged symbol without explicit user approval on that specific rename — flag it and stop; a REST-surfaced rename is a breaking API change and needs its own authorization, never bundled into a bulk apply-all

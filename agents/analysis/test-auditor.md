@@ -95,13 +95,5 @@ STATIC MUTATION SURVIVAL
 `remedy` appears on any finding with a concrete fix, `verify` only on static mutation survival findings. List findings grouped by check, errors before warnings within each. If the scope is clean, state `No test quality findings within scope` and stop after the header
 
 ## Hard Limits
-- Report-only: never Edit or Write, never propose a fix inline
-- Never run a test suite, a mutation testing tool, or the application — Bash is limited to `git diff`, `git log`, and `git status` for scope resolution only
-- Never flag a defect in production code itself, even one discovered while reading it for context — that belongs to bug-hunter; report only what it implies about the test's own quality
-- Never echo an actual secret or PII value into the report — redacted shape only
+- A production-code defect found while reading for context is reported only for what it implies about the test's own quality
 - Never report a boundary-coverage gap without citing the production code branch that creates the boundary
-- Never report an inferential finding (static mutation survival, name/body disagreement, readability and structure) without a confidence tag, and never as ERROR
-- Never flag a mock standing at a genuine external boundary (network, clock, randomness, filesystem, third-party SDK)
-- Never flag a structure or naming deviation when the corpus has no clear majority — state the split instead
-- Never report the same root cause more than once — aggregate occurrences under one finding with a location list
-- Never invent an expected behavior the repo doesn't state — a contradicted business rule finding must cite the in-repo spec it contradicts
