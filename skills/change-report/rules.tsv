@@ -1,0 +1,20 @@
+# change-report census rules: <key> TAB <regex>; several lines of one key are OR-ed
+# Regexes use only the subset POSIX ERE (awk) and .NET share: ( ) | ^ $ . * + ? [ ] and backslash escapes
+# Every key matches the lowercased path, except test-name (path as-is) and test-sdk (project file content, via git grep -E)
+source	\.(cs|fs|fsx|vb|java|kt|scala|groovy|go|rs|py|js|jsx|mjs|cjs|ts|tsx|mts|cts|php|rb|swift|dart|ex|exs|erl|hs|clj|lua|r|c|h|cc|cpp|cxx|hpp|hh|m|mm|zig)$
+source	\.sql$
+source	\.(css|scss|sass|less|html|htm|vue|svelte|astro|razor|cshtml|vbhtml|erb|twig|hbs|ejs)$
+script	\.(sh|bash|zsh|ps1|psm1|bat|cmd)$
+script-exclude	(^|/)(build|scripts|tools|ci|eng|\.github)/
+exclude	(^|/)(node_modules|vendor|third_party|dist|coverage|__pycache__|\.venv)/
+generated	(\.designer\.cs|\.g\.cs|\.g\.i\.cs|modelsnapshot\.cs|\.pb\.go|_pb2\.py|\.pb\.h|\.pb\.cc|\.min\.js|\.min\.css)$
+generated	[._-]generated\.[a-z0-9]+$
+manifest	^(.*\.(csproj|fsproj|vbproj|gemspec|cabal)|pom\.xml|build\.gradle|build\.gradle\.kts|build\.sbt|package\.json|pyproject\.toml|setup\.py|setup\.cfg|go\.mod|cargo\.toml|composer\.json|pubspec\.yaml|mix\.exs|package\.swift)$
+manifest-root	^cmakelists\.txt$
+dotnet-manifest	\.(csproj|fsproj|vbproj)$
+test-project	(^|[._-])(test|tests|spec|specs|unittests|integrationtests|e2e)$
+test-path	(^|/)(test|tests|__tests__|spec|specs|e2e)/
+test-path	(_test\.go|_test\.py|_test\.rb|_spec\.rb|_test\.dart|\.test\.[a-z]+|\.spec\.[a-z]+)$
+test-path	(^|/)test_[^/]*\.py$
+test-name	(Test|Tests|Spec|Specs|IT)\.(cs|fs|vb|java|kt|scala|groovy|swift|php)$
+test-sdk	Microsoft\.NET\.Test\.Sdk|<IsTestProject>[[:space:]]*true
