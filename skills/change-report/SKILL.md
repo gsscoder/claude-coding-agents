@@ -52,14 +52,13 @@ Produce the Output Format below, rows in `G` order, every number copied verbatim
 ```
 ## Change report — <working tree | branch <branch> since <base> | commit <short-sha> <subject>>
 
-| <Project | Directory> | Files | A / M / D / R | +Lines / −Lines | What was done |
-|---|---|---|---|---|
+| <Project | Directory> | Files | 🆕 A / ✏️ M / 🗑️ D / 🔀 R | +Lines / −Lines | What was done |
+|---|---|---|---|---|---|
 | <group> | <files> | <A> / <M> / <D> / <R> | +<added> / −<removed> | <one-line account> |
-| Total | <files> | <A> / <M> / <D> / <R> | +<added> / −<removed> | |
 
-<n> non-source files excluded
+Total: <files> files · 🆕 <A> / ✏️ <M> / 🗑️ <D> / 🔀 <R> · +<added> / −<removed> · <n> non-source files excluded
 ```
-First column header is `Project` when `grouping` is `project`, `Directory` otherwise
+First column header is `Project` when `grouping` is `project`, `Directory` otherwise. The emoji go in the header only — 🆕 added, ✏️ modified, 🗑️ deleted, 🔀 renamed; cells hold bare numbers. Totals go on the line under the table, never as a table row
 
 ## Hard Limits
 - Do not modify files, the index, refs, or the stash — no checkout, stash, reset, or commit; this skill reports, it does not change the repo
